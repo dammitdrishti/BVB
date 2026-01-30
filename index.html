@@ -957,7 +957,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="images/logo.jpg" alt="Bharatiya Vidya Bhavan Logo" style="max-width: 200px; margin-bottom: 2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
+            <img src="logo.jpg" alt="Bharatiya Vidya Bhavan Logo" style="max-width: 200px; margin-bottom: 2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
             <h1>Bharatiya Vidya Bhavan</h1>
             <p class="subtitle">Bhopal Kendra</p>
             <p class="tagline">Bhavan's Institute of Communication & Management</p>
@@ -1339,7 +1339,7 @@
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <h3>Email</h3>
-                    <a href="/cdn-cgi/l/email-protection#95f7e3f7f7fdfae5f4f9a4a7a6d5f2f8f4fcf9bbf6faf8"><span class="__cf_email__" data-cfemail="1f7d697d7d77706f7e732e2d2c5f78727e7673317c7072">[email&#160;protected]</span></a>
+                    <a href="mailto:bvbbhopal123@gmail.com">bvbbhopal123@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📞</div>
@@ -1407,7 +1407,7 @@
         <p style="margin-top: 1rem;"><a href="https://www.bhavans.info/" target="_blank">www.bhavans.info</a></p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Scroll Animation
         const observerOptions = {
             threshold: 0.1,
@@ -1469,4 +1469,12 @@
                 }
             } catch (error) {
                 formStatus.className = 'form-status error';
-                formStatus.textContent = 'Oops! There was a probl
+                formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again or contact us directly.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Enquiry';
+            }
+        });
+    </script>
+</body>
+</html>
