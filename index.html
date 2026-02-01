@@ -177,7 +177,7 @@
             transform: translateY(-3px);
         }
 
-        /* --- CONTENT SECTIONS --- */
+        /* --- SECTIONS --- */
         section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 4rem; position: relative; }
         .section-header h2 { font-size: clamp(2rem, 4vw, 3.5rem); color: var(--navy-dark); margin-bottom: 1rem; position: relative; display: inline-block; }
@@ -186,7 +186,6 @@
         .fade-in { opacity: 0; transform: translateY(15px); transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* FOUNDER */
         .founder { background: linear-gradient(135deg, var(--lavender) 0%, var(--white) 100%); }
         .founder-content { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
         .founder-image { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(38, 40, 66, 0.2); position: relative; }
@@ -194,7 +193,7 @@
         .founder-image img { width: 100%; height: 100%; object-fit: cover; }
         .founder-text .quote { font-size: 1.3rem; color: var(--blue-slate); font-style: italic; border-left: 4px solid var(--orange-primary); padding-left: 2rem; }
 
-        /* NETWORK SECTION RESTORED */
+        /* --- NETWORK SECTION --- */
         .network-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: flex-start; max-width: 1200px; margin: 0 auto; }
         .network-left { display: flex; flex-direction: column; gap: 2rem; }
         .network-stats { background: linear-gradient(135deg, var(--navy-dark), var(--blue-slate)); padding: 2.5rem; border-radius: 25px; color: white; }
@@ -207,28 +206,17 @@
         .location-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 12px; }
         .location-list li { color: var(--blue-slate); font-weight: 500; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
 
-        .network-map-box { 
-            width: 100%; 
-            height: 100%; 
-            min-height: 550px; 
-            background: white; 
-            border-radius: 25px; 
-            padding: 20px; 
-            box-shadow: 0 15px 50px rgba(38, 40, 66, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .network-map-box { width: 100%; height: 100%; min-height: 550px; background: white; border-radius: 25px; padding: 20px; box-shadow: 0 15px 50px rgba(38, 40, 66, 0.1); display: flex; align-items: center; justify-content: center; }
         .network-map-box img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 15px; }
 
-        /* BOARD MEMBERS FULL LIST */
+        /* --- BOARD MEMBERS --- */
         .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
         .member-card { text-align: center; padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .member-image { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 1.5rem; overflow: hidden; border: 4px solid var(--lavender); }
         .member-image img { width: 100%; height: 100%; object-fit: cover; }
         .member-card .role { color: var(--orange-primary); font-weight: 600; }
 
-        /* BOUDDHIK SAMWAD RESTORED */
+        /* --- ACTIVITIES --- */
         .activities { background: var(--navy-dark); color: white; padding: 6rem 2rem; }
         .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
         .activity-card { background: rgba(255,255,255,0.08); padding: 1.8rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
@@ -236,20 +224,26 @@
         .activity-image img { width: 100%; height: 100%; object-fit: cover; }
         .activity-date { display: inline-block; padding: 0.3rem 1rem; background: var(--orange-primary); border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
 
-        /* INFRASTRUCTURE RESTORED */
+        /* --- INFRASTRUCTURE --- */
         .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .infra-card { border-radius: 20px; overflow: hidden; height: 250px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
         .infra-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
         .infra-card:hover img { transform: scale(1.05); }
 
-        /* COURSES RESTORED */
+        /* --- COURSES SECTION (RESTORED DETAILS) --- */
         .course-card { background: white; border-radius: 25px; overflow: hidden; margin-bottom: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .course-header { background: linear-gradient(135deg, var(--blue-slate), var(--navy-mid)); padding: 2.5rem; color: white; }
         .course-body { padding: 2.5rem; }
-        .course-section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; list-style: none;}
+        .course-section { margin-bottom: 2rem; }
+        .course-section h4 { font-size: 1.4rem; color: var(--navy-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .course-section h4::before { content: ''; width: 6px; height: 30px; background: var(--orange-primary); border-radius: 3px; }
+        .course-section ul { list-style: none; padding-left: 1rem; }
+        .course-section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; color: var(--blue-slate); }
         .course-section li::before { content: '▸'; position: absolute; left: 0; color: var(--orange-primary); font-weight: bold; }
+        .academic-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; padding: 1.5rem; background: var(--lavender); border-radius: 15px; margin-top: 1.5rem; }
+        .academic-info strong { display: block; font-size: 1.1rem; color: var(--navy-dark); margin-bottom: 0.5rem; }
 
-        /* CONTACT */
+        /* --- CONTACT --- */
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
         .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
         .contact-item { background: white; padding: 1.5rem; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
@@ -261,7 +255,7 @@
         footer { background: var(--navy-dark); color: var(--lavender); padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
         .bg-pattern { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0.03; background-image: repeating-linear-gradient(45deg, var(--navy-dark) 0, var(--navy-dark) 2px, transparent 2px, transparent 10px), repeating-linear-gradient(-45deg, var(--navy-dark) 0, var(--navy-dark) 2px, transparent 2px, transparent 10px); }
 
-        /* --- MOBILE UI FIXES (IMAGE 1) --- */
+        /* --- MOBILE UI --- */
         @media (max-width: 968px) {
             .founder-content, .network-content, .contact-wrapper { grid-template-columns: 1fr; }
             .network-map-box { min-height: 400px; }
@@ -273,9 +267,7 @@
             .nav-brand span { font-size: 0.85rem; max-width: 150px; line-height: 1.2; }
             .nav-brand img { height: 40px; }
 
-            .menu-toggle {
-                display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; z-index: 1001;
-            }
+            .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; z-index: 1001; }
             .menu-toggle span { width: 25px; height: 3px; background: var(--navy-dark); border-radius: 2px; transition: 0.3s; }
 
             .nav-links {
@@ -331,10 +323,10 @@
     <section id="about" class="founder fade-in">
         <div class="section-header"><h2>Our Founder</h2></div>
         <div class="founder-content">
-            <div class="founder-image-wrapper"><div class="founder-image"><img src="images/founder.png" alt="Kulapati K. M. Munshi"></div></div>
+            <div class="founder-image-wrapper"><div class="founder-image"><img src="images/founder.png" alt="Founder"></div></div>
             <div class="founder-text">
                 <h3>KULAPATI K. M. MUNSHI</h3>
-                <p class="quote">"India will once again be acknowledged as the vishwa guru - a superpower that embodies the ideals of vasudhaiva kutumbakam - the global family."</p>
+                <p class="quote">"India will once again be acknowledged as the vishwa guru - a superpower that embodies the ideals of vasudhaiva kutumbakam."</p>
             </div>
         </div>
     </section>
@@ -344,8 +336,8 @@
         <div class="network-content">
             <div class="network-left">
                 <div class="network-stats">
-                    <div class="stat-item"><span class="stat-number">367</span>Constituent Institutions</div>
-                    <div class="stat-item"><span class="stat-number">119</span>Kendras in India</div>
+                    <div class="stat-item"><span class="stat-number">367</span>Institutions</div>
+                    <div class="stat-item"><span class="stat-number">119</span>Indian Kendras</div>
                     <div class="stat-item"><span class="stat-number">5</span>Overseas Centres</div>
                 </div>
                 <div class="network-locations">
@@ -366,7 +358,7 @@
     <section class="board fade-in">
         <div class="section-header"><h2>Governance & Board</h2></div>
         <div class="board-grid">
-            <div class="member-card"><div class="member-image"><img src="images/s K Routh.png"></div><h3>Shri S.K. Rout</h3><p class="role">Chairman</p><p>IPS (Retd)</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/s K Routh.png"></div><h3>Shri S.K. Rout</h3><p class="role">Chairman (IPS Retd)</p></div>
             <div class="member-card"><div class="member-image"><img src="images/Salil Chaterjee.jpeg"></div><h3>Shri Salil Chatterjee</h3><p class="role">Secretary</p></div>
             <div class="member-card"><div class="member-image"><img src="images/Sanat Gangwal.jpeg"></div><h3>Shri Sanat Gangwal</h3><p class="role">Treasurer</p></div>
             <div class="member-card"><div class="member-image"><img src="images/Vikas Choudhary.jpeg"></div><h3>Shri Vikas Chaudhary</h3><p class="role">Member</p></div>
@@ -376,12 +368,12 @@
     </section>
 
     <section class="activities fade-in">
-        <div class="section-header"><h2>Bouddhik Samwad</h2><p>Intellectual Dialogues & Cultural Activities</p></div>
+        <div class="section-header"><h2>Bouddhik Samwad</h2></div>
         <div class="activities-grid">
-            <div class="activity-card"><div class="activity-image"><img src="images/1.jpeg"></div><span class="activity-date">22-01-2026</span><h3>Demography Challenges</h3><p>Speaker: Mr. N.K. Tripathi, IPS (Retd)</p></div>
-            <div class="activity-card"><div class="activity-image"><img src="images/2.jpeg"></div><span class="activity-date">30-10-2025</span><h3>Indo American Relations</h3><p>Speaker: Mr. Ajatshatru Shrivastava, IAS (Retd)</p></div>
-            <div class="activity-card"><div class="activity-image"><img src="images/3.jpeg"></div><span class="activity-date">29-08-2025</span><h3>Bharatiya Gyan Parampara</h3><p>Speaker: Dr. Shailendra Shrivastava, IPS (Retd)</p></div>
-            <div class="activity-card"><div class="activity-image"><img src="images/4.jpeg"></div><span class="activity-date">18-07-2025</span><h3>National Security</h3><p>Speaker: Shri S.K. Rout, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/1.jpeg"></div><span class="activity-date">22-01-2026</span><h3>Demography Challenges</h3><p>Mr. N.K. Tripathi, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/2.jpeg"></div><span class="activity-date">30-10-2025</span><h3>Indo American Relations</h3><p>Mr. Ajatshatru Shrivastava, IAS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/3.jpeg"></div><span class="activity-date">29-08-2025</span><h3>Bharatiya Gyan Parampara</h3><p>Dr. Shailendra Shrivastava, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/4.jpeg"></div><span class="activity-date">18-07-2025</span><h3>National Security</h3><p>Shri S.K. Rout, IPS (Retd)</p></div>
         </div>
     </section>
 
@@ -398,29 +390,32 @@
     </section>
 
     <section id="courses" class="courses fade-in">
-        <div class="section-header"><h2>Our Courses</h2><p>PG Diploma Programs</p></div>
+        <div class="section-header"><h2>Our Courses</h2></div>
         
         <div class="course-card">
             <div class="course-header"><h3>Industrial Relations & Personnel Management</h3></div>
             <div class="course-body">
-                <div class="course-section"><h4>Career Scope</h4><p>HR roles in private/govt sectors, consulting, entrepreneurship.</p></div>
-                <div class="course-section"><h4>Structure</h4><ul><li>Organizational Behaviour</li><li>Personnel Management</li><li>Labour Legislation</li></ul></div>
+                <div class="course-section"><h4>Career Scope</h4><p>HR roles in private and government sectors, consulting, entrepreneurship.</p></div>
+                <div class="course-section"><h4>Course Structure</h4><ul><li>Organizational Behaviour</li><li>Personnel Management</li><li>Human Resources Development</li><li>Industrial Relations</li><li>Labour Legislation</li><li>Cultural Heritage of India</li></ul></div>
+                <div class="academic-info"><div><strong>Contact Hours</strong>150 hours</div><div><strong>Batch Timings</strong>Evening batches</div></div>
             </div>
         </div>
 
         <div class="course-card">
             <div class="course-header"><h3>Digital Media</h3></div>
             <div class="course-body">
-                <div class="course-section"><h4>Career Scope</h4><p>News portals, TV channels, Content Marketing.</p></div>
-                <div class="course-section"><h4>Structure</h4><ul><li>Reporting</li><li>Advanced Journalistic Writing</li><li>Multimedia Journalism</li></ul></div>
+                <div class="course-section"><h4>Career Scope</h4><p>News portals, TV channels, Content Writing and Marketing for news and non-news sectors.</p></div>
+                <div class="course-section"><h4>Course Structure</h4><ul><li>Understanding Digital Media</li><li>Reporting and Content Generation</li><li>Advanced Journalistic Writing</li><li>Multimedia Journalism</li><li>Cultural Heritage of India</li></ul></div>
+                <div class="academic-info"><div><strong>Contact Hours</strong>150 hours</div><div><strong>Batch Timings</strong>Evening classes</div></div>
             </div>
         </div>
 
         <div class="course-card">
             <div class="course-header"><h3>International Trade (Import-Export)</h3></div>
             <div class="course-body">
-                <div class="course-section"><h4>Career Scope</h4><p>Shipping Lines, EXIM documentation, Foreign Exchange.</p></div>
-                <div class="course-section"><h4>Structure</h4><ul><li>Port Operations</li><li>Supply Chain Management</li><li>Global Commercial Ecosystem</li></ul></div>
+                <div class="course-section"><h4>Career Scope</h4><p>Logistics, Shipping Lines, EXIM documentation, foreign exchange management.</p></div>
+                <div class="course-section"><h4>Course Structure</h4><ul><li>Port Operations</li><li>Supply Chain Management</li><li>Financial Management</li><li>Export Import Practices & Documentation</li><li>Cultural Heritage of India</li></ul></div>
+                <div class="academic-info"><div><strong>Contact Hours</strong>150 hours</div><div><strong>Batch Timings</strong>Evening classes</div></div>
             </div>
         </div>
     </section>
@@ -431,13 +426,12 @@
             <div class="contact-info">
                 <div class="contact-item"><span>📧</span><a href="mailto:bvbbhopal123@gmail.com">bvbbhopal123@gmail.com</a></div>
                 <div class="contact-item"><span>📞</span><a href="tel:07554850381">0755-4850381</a></div>
-                <div class="map-iframe-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2163989344485!2d77.4300302!3d23.2351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4268393699c1%3A0xc486438883624e5!2sMP%20Nagar%20Zone%201%2C%20Bhopal!5e0!3m2!1sen!2sin!4v17000000000002" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                <div class="map-iframe-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2163989344485!2d77.4300302!3d23.2351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4268393699c1%3A0xc486438883624e5!2sMP%20Nagar%20Zone%201%2C%20Bhopal!5e0!3m2!1sen!2sin!4v17000000000003" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
             </div>
             <div class="contact-form">
                 <form action="https://formspree.io/f/mqknpogz" method="POST">
                     <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);">
                     <input type="email" name="email" placeholder="Email" required style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);">
-                    <select name="course" style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);"><option>HR Management</option><option>Digital Media</option><option>International Trade</option></select>
                     <textarea name="message" placeholder="Message" rows="4" style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);"></textarea>
                     <button type="submit" class="submit-btn">Submit Enquiry</button>
                 </form>
