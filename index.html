@@ -35,6 +35,7 @@
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
 
+        /* --- STICKY NAVIGATION --- */
         nav {
             position: fixed;
             top: 0;
@@ -57,15 +58,29 @@
             gap: 15px;
             text-decoration: none;
             color: var(--navy-dark);
+        }
+
+        .nav-brand img { height: 50px; width: auto; }
+
+        .nav-brand span {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.1rem;
         }
 
-        .nav-brand img { height: 50px; width: auto; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--navy-dark); font-weight: 600; transition: 0.3s; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
         .nav-links a:hover { color: var(--orange-primary); }
 
         .nav-cta {
@@ -76,6 +91,9 @@
             box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
 
+        .menu-toggle { display: none; }
+
+        /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--blue-slate) 100%);
             min-height: calc(100vh - var(--nav-height));
@@ -112,7 +130,7 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -139,6 +157,8 @@
             font-style: italic;
         }
 
+        .hero-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
         .hero-cta {
             display: inline-block;
             padding: 1.2rem 3rem;
@@ -150,22 +170,31 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-            margin: 0.5rem;
         }
 
+        .hero-cta:hover {
+            background: var(--orange-dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- CONTENT SECTIONS --- */
         section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 4rem; position: relative; }
         .section-header h2 { font-size: clamp(2rem, 4vw, 3.5rem); color: var(--navy-dark); margin-bottom: 1rem; position: relative; display: inline-block; }
         .section-header h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60%; height: 4px; background: linear-gradient(90deg, transparent, var(--orange-primary), transparent); }
 
+        .fade-in { opacity: 0; transform: translateY(15px); transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
         /* FOUNDER */
         .founder { background: linear-gradient(135deg, var(--lavender) 0%, var(--white) 100%); }
         .founder-content { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-        .founder-image { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(38, 40, 66, 0.2); }
+        .founder-image { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(38, 40, 66, 0.2); position: relative; }
+        .founder-image::after { content: ''; position: absolute; top: -10px; right: -10px; bottom: -10px; left: -10px; border: 3px solid var(--orange-primary); border-radius: 25px; z-index: -1; }
         .founder-image img { width: 100%; height: 100%; object-fit: cover; }
-        .founder-text .quote { font-size: 1.3rem; color: var(--blue-slate); font-style: italic; border-left: 4px solid var(--orange-primary); padding-left: 2rem; margin-top: 1.5rem; }
+        .founder-text .quote { font-size: 1.3rem; color: var(--blue-slate); font-style: italic; border-left: 4px solid var(--orange-primary); padding-left: 2rem; }
 
-        /* NETWORK SECTION FIXES */
+        /* NETWORK SECTION RESTORED */
         .network-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: flex-start; max-width: 1200px; margin: 0 auto; }
         .network-left { display: flex; flex-direction: column; gap: 2rem; }
         .network-stats { background: linear-gradient(135deg, var(--navy-dark), var(--blue-slate)); padding: 2.5rem; border-radius: 25px; color: white; }
@@ -192,22 +221,33 @@
         }
         .network-map-box img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 15px; }
 
-        /* BOARD */
+        /* BOARD MEMBERS FULL LIST */
         .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
         .member-card { text-align: center; padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .member-image { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 1.5rem; overflow: hidden; border: 4px solid var(--lavender); }
         .member-image img { width: 100%; height: 100%; object-fit: cover; }
+        .member-card .role { color: var(--orange-primary); font-weight: 600; }
 
-        /* ACTIVITIES */
+        /* BOUDDHIK SAMWAD RESTORED */
         .activities { background: var(--navy-dark); color: white; padding: 6rem 2rem; }
         .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
         .activity-card { background: rgba(255,255,255,0.08); padding: 1.8rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
         .activity-image { width: 100%; height: 190px; border-radius: 12px; overflow: hidden; margin-bottom: 1.2rem; }
         .activity-image img { width: 100%; height: 100%; object-fit: cover; }
+        .activity-date { display: inline-block; padding: 0.3rem 1rem; background: var(--orange-primary); border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
 
-        /* COURSES */
+        /* INFRASTRUCTURE RESTORED */
+        .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .infra-card { border-radius: 20px; overflow: hidden; height: 250px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .infra-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .infra-card:hover img { transform: scale(1.05); }
+
+        /* COURSES RESTORED */
         .course-card { background: white; border-radius: 25px; overflow: hidden; margin-bottom: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .course-header { background: linear-gradient(135deg, var(--blue-slate), var(--navy-mid)); padding: 2.5rem; color: white; }
+        .course-body { padding: 2.5rem; }
+        .course-section li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; list-style: none;}
+        .course-section li::before { content: '▸'; position: absolute; left: 0; color: var(--orange-primary); font-weight: bold; }
 
         /* CONTACT */
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
@@ -219,35 +259,60 @@
         .submit-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
 
         footer { background: var(--navy-dark); color: var(--lavender); padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .bg-pattern { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0.03; background-image: repeating-linear-gradient(45deg, var(--navy-dark) 0, var(--navy-dark) 2px, transparent 2px, transparent 10px), repeating-linear-gradient(-45deg, var(--navy-dark) 0, var(--navy-dark) 2px, transparent 2px, transparent 10px); }
 
+        /* --- MOBILE UI FIXES (IMAGE 1) --- */
         @media (max-width: 968px) {
             .founder-content, .network-content, .contact-wrapper { grid-template-columns: 1fr; }
             .network-map-box { min-height: 400px; }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; line-height: 1.2; }
-            nav { height: 70px; padding: 0 1.2rem; }
+            nav { padding: 0 1.5rem; height: 70px; }
             body { padding-top: 70px; }
-            .nav-brand span { font-size: 0.85rem; max-width: 160px; line-height: 1.3; }
-            .nav-links { display: none; } /* Consider adding a mobile menu button here */
-        }
+            .nav-brand span { font-size: 0.85rem; max-width: 150px; line-height: 1.2; }
+            .nav-brand img { height: 40px; }
 
-        .fade-in { opacity: 0; transform: translateY(15px); transition: 0.5s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+            .menu-toggle {
+                display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; z-index: 1001;
+            }
+            .menu-toggle span { width: 25px; height: 3px; background: var(--navy-dark); border-radius: 2px; transition: 0.3s; }
+
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; background: white;
+                flex-direction: column; justify-content: center; gap: 2.5rem;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { right: 0; }
+
+            .hero { padding: 4rem 1.5rem; min-height: 75vh; }
+            .hero h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+            .hero .subtitle { font-size: 1.1rem; margin-bottom: 1.2rem; }
+            .hero .tagline { font-size: 0.9rem; margin-bottom: 2.5rem; line-height: 1.5; }
+            
+            .hero-btns { flex-direction: column; width: 100%; gap: 1rem; }
+            .hero-cta { width: 100%; text-align: center; padding: 1rem; }
+        }
     </style>
 </head>
 <body id="top">
+    <div class="bg-pattern"></div>
+
     <nav>
         <a href="#top" class="nav-brand">
             <img src="images/logo final.jpeg" alt="Logo">
             <span>Bharatiya Vidya Bhavan, Bhopal</span>
         </a>
-        <div class="nav-links">
-            <a href="#top">Home</a>
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#contact" class="nav-cta">Enquire Now</a>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#top" onclick="closeMenu()">Home</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#courses" onclick="closeMenu()">Courses</a>
+            <a href="#contact" class="nav-cta" onclick="closeMenu()">Enquire Now</a>
         </div>
     </nav>
 
@@ -256,7 +321,7 @@
             <h1>Bharatiya Vidya Bhavan</h1>
             <p class="subtitle">Bhopal Kendra</p>
             <p class="tagline">Bhavan's Institute of Communication & Management</p>
-            <div>
+            <div class="hero-btns">
                 <a href="#courses" class="hero-cta">Explore Our Courses</a>
                 <a href="#contact" class="hero-cta">Enquire Now</a>
             </div>
@@ -266,24 +331,21 @@
     <section id="about" class="founder fade-in">
         <div class="section-header"><h2>Our Founder</h2></div>
         <div class="founder-content">
-            <div class="founder-image"><img src="images/founder.png" alt="Founder"></div>
+            <div class="founder-image-wrapper"><div class="founder-image"><img src="images/founder.png" alt="Kulapati K. M. Munshi"></div></div>
             <div class="founder-text">
                 <h3>KULAPATI K. M. MUNSHI</h3>
-                <p class="quote">"India will once again be acknowledged as the vishwa guru - a superpower that embodies the ideals of vasudhaiva kutumbakam."</p>
+                <p class="quote">"India will once again be acknowledged as the vishwa guru - a superpower that embodies the ideals of vasudhaiva kutumbakam - the global family."</p>
             </div>
         </div>
     </section>
 
     <section class="network fade-in">
-        <div class="section-header">
-            <h2>The Bhavan Network</h2>
-            <p>A global presence dedicated to education and cultural heritage</p>
-        </div>
+        <div class="section-header"><h2>The Bhavan Network</h2><p>A global presence dedicated to education and culture</p></div>
         <div class="network-content">
             <div class="network-left">
                 <div class="network-stats">
-                    <div class="stat-item"><span class="stat-number">367</span>Institutions</div>
-                    <div class="stat-item"><span class="stat-number">119</span>Indian Kendras</div>
+                    <div class="stat-item"><span class="stat-number">367</span>Constituent Institutions</div>
+                    <div class="stat-item"><span class="stat-number">119</span>Kendras in India</div>
                     <div class="stat-item"><span class="stat-number">5</span>Overseas Centres</div>
                 </div>
                 <div class="network-locations">
@@ -297,31 +359,68 @@
                     </ul>
                 </div>
             </div>
-            <div class="network-map-box">
-                <img src="images/map.png" alt="Full Network Map">
-            </div>
+            <div class="network-map-box"><img src="images/map.png" alt="Full Network Map"></div>
         </div>
     </section>
 
     <section class="board fade-in">
-        <div class="section-header"><h2>Our Governance</h2></div>
+        <div class="section-header"><h2>Governance & Board</h2></div>
         <div class="board-grid">
-            <div class="member-card"><div class="member-image"><img src="images/s K Routh.png"></div><h3>Shri S.K. Rout</h3><p>Chairman</p></div>
-            <div class="member-card"><div class="member-image"><img src="images/Salil Chaterjee.jpeg"></div><h3>Shri Salil Chatterjee</h3><p>Secretary</p></div>
-            <div class="member-card"><div class="member-image"><img src="images/Sanat Gangwal.jpeg"></div><h3>Shri Sanat Gangwal</h3><p>Treasurer</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/s K Routh.png"></div><h3>Shri S.K. Rout</h3><p class="role">Chairman</p><p>IPS (Retd)</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Salil Chaterjee.jpeg"></div><h3>Shri Salil Chatterjee</h3><p class="role">Secretary</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Sanat Gangwal.jpeg"></div><h3>Shri Sanat Gangwal</h3><p class="role">Treasurer</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Vikas Choudhary.jpeg"></div><h3>Shri Vikas Chaudhary</h3><p class="role">Member</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/R G Dwivedi.jpeg"></div><h3>Shri R.G. Dwivedi</h3><p class="role">Member</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Hina.png"></div><h3>Ms. Hina Rout</h3><p class="role">Member</p></div>
+        </div>
+    </section>
+
+    <section class="activities fade-in">
+        <div class="section-header"><h2>Bouddhik Samwad</h2><p>Intellectual Dialogues & Cultural Activities</p></div>
+        <div class="activities-grid">
+            <div class="activity-card"><div class="activity-image"><img src="images/1.jpeg"></div><span class="activity-date">22-01-2026</span><h3>Demography Challenges</h3><p>Speaker: Mr. N.K. Tripathi, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/2.jpeg"></div><span class="activity-date">30-10-2025</span><h3>Indo American Relations</h3><p>Speaker: Mr. Ajatshatru Shrivastava, IAS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/3.jpeg"></div><span class="activity-date">29-08-2025</span><h3>Bharatiya Gyan Parampara</h3><p>Speaker: Dr. Shailendra Shrivastava, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/4.jpeg"></div><span class="activity-date">18-07-2025</span><h3>National Security</h3><p>Speaker: Shri S.K. Rout, IPS (Retd)</p></div>
+        </div>
+    </section>
+
+    <section class="infrastructure fade-in">
+        <div class="section-header"><h2>Campus Infrastructure</h2></div>
+        <div class="infra-grid">
+            <div class="infra-card"><img src="images/infra 1 (1).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (2).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (3).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (4).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (5).jpg"></div>
+            <div class="infra-card"><img src="images/5.jpeg"></div>
         </div>
     </section>
 
     <section id="courses" class="courses fade-in">
-        <div class="section-header"><h2>Our Courses</h2></div>
+        <div class="section-header"><h2>Our Courses</h2><p>PG Diploma Programs</p></div>
+        
         <div class="course-card">
-            <div class="course-header"><h3>Post-Graduate Diploma Programs</h3></div>
+            <div class="course-header"><h3>Industrial Relations & Personnel Management</h3></div>
             <div class="course-body">
-                <ul>
-                    <li>Journalism & Digital Media</li>
-                    <li>HR Management & Personnel Relations</li>
-                    <li>International Trade & Logistics</li>
-                </ul>
+                <div class="course-section"><h4>Career Scope</h4><p>HR roles in private/govt sectors, consulting, entrepreneurship.</p></div>
+                <div class="course-section"><h4>Structure</h4><ul><li>Organizational Behaviour</li><li>Personnel Management</li><li>Labour Legislation</li></ul></div>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-header"><h3>Digital Media</h3></div>
+            <div class="course-body">
+                <div class="course-section"><h4>Career Scope</h4><p>News portals, TV channels, Content Marketing.</p></div>
+                <div class="course-section"><h4>Structure</h4><ul><li>Reporting</li><li>Advanced Journalistic Writing</li><li>Multimedia Journalism</li></ul></div>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-header"><h3>International Trade (Import-Export)</h3></div>
+            <div class="course-body">
+                <div class="course-section"><h4>Career Scope</h4><p>Shipping Lines, EXIM documentation, Foreign Exchange.</p></div>
+                <div class="course-section"><h4>Structure</h4><ul><li>Port Operations</li><li>Supply Chain Management</li><li>Global Commercial Ecosystem</li></ul></div>
             </div>
         </div>
     </section>
@@ -332,16 +431,15 @@
             <div class="contact-info">
                 <div class="contact-item"><span>📧</span><a href="mailto:bvbbhopal123@gmail.com">bvbbhopal123@gmail.com</a></div>
                 <div class="contact-item"><span>📞</span><a href="tel:07554850381">0755-4850381</a></div>
-                <div class="map-iframe-box">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2163989344485!2d77.4300302!3d23.2351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4268393699c1%3A0xc486438883624e5!2sMP%20Nagar%20Zone%201%2C%20Bhopal!5e0!3m2!1sen!2sin!4v17000000000001" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <div class="map-iframe-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2163989344485!2d77.4300302!3d23.2351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4268393699c1%3A0xc486438883624e5!2sMP%20Nagar%20Zone%201%2C%20Bhopal!5e0!3m2!1sen!2sin!4v17000000000002" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
             </div>
             <div class="contact-form">
                 <form action="https://formspree.io/f/mqknpogz" method="POST">
-                    <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:1rem; margin-bottom:1.2rem; border-radius:12px; border:2px solid var(--lavender);">
-                    <input type="email" name="email" placeholder="Email" required style="width:100%; padding:1rem; margin-bottom:1.2rem; border-radius:12px; border:2px solid var(--lavender);">
-                    <textarea name="message" placeholder="Your Message" rows="4" style="width:100%; padding:1rem; margin-bottom:1.2rem; border-radius:12px; border:2px solid var(--lavender);"></textarea>
-                    <button type="submit" class="submit-btn">Send Enquiry</button>
+                    <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);">
+                    <input type="email" name="email" placeholder="Email" required style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);">
+                    <select name="course" style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);"><option>HR Management</option><option>Digital Media</option><option>International Trade</option></select>
+                    <textarea name="message" placeholder="Message" rows="4" style="width:100%; padding:1rem; margin-bottom:1rem; border-radius:10px; border:2px solid var(--lavender);"></textarea>
+                    <button type="submit" class="submit-btn">Submit Enquiry</button>
                 </form>
             </div>
         </div>
@@ -350,6 +448,9 @@
     <footer><p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra. All rights reserved.</p></footer>
 
     <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        function closeMenu() { document.getElementById('navLinks').classList.remove('active'); }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -357,7 +458,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.05 });
+        }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
