@@ -59,14 +59,15 @@
         .stat-item h2 { color: var(--orange-primary); font-size: 2.8rem; margin-bottom: 5px; }
 
         section { padding: 100px 10%; }
-        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.8rem; color: var(--delft-blue); }
+        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.8rem; color: var(--delft-blue); position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--orange-primary); margin: 20px auto; border-radius: 2px; }
 
         /* --- FOUNDER --- */
         .founder-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
         .founder-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 8px solid var(--lavender-web); }
         .founder-img img { width: 100%; display: block; }
 
-        /* --- COURSES --- */
+        /* --- COURSES (UI REPLICATED FROM IMG1) --- */
         .course-container { margin-bottom: 60px; border-radius: 4px; overflow: hidden; background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--lavender-web); }
         .course-banner { background: var(--delft-blue); color: white; padding: 20px 40px; font-size: 1.6rem; font-weight: 600; }
         .course-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; padding: 50px 40px; }
@@ -82,47 +83,48 @@
         .structure-list li { padding: 15px 0; border-bottom: 1px solid var(--lavender-web); display: flex; align-items: center; gap: 12px; font-weight: 500; }
         .structure-list li::before { content: "▶"; color: var(--orange-primary); font-size: 0.7rem; }
 
-        /* --- CAROUSEL REPAIR --- */
+        /* --- CAROUSEL FIX --- */
         .swiper { width: 100%; padding-bottom: 100px !important; }
         .swiper-button-next, .swiper-button-prev { color: var(--orange-primary) !important; background: white; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); top: 40%; }
         .swiper-pagination { bottom: 20px !important; }
         .swiper-pagination-bullet-active { background: var(--orange-primary) !important; transform: scale(1.3); }
 
         .member-card { background: var(--lavender-web); padding: 50px 30px; border-radius: 20px; text-align: center; height: 100%; transition: 0.3s; }
-        .member-card:hover { transform: translateY(-10px); background: var(--yinmn-blue); color: white; }
         .member-card img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--white); }
 
-        /* --- BOUDDHIK SAMWAD (GRID WITH IMAGES) --- */
+        /* --- BOUDDHIK SAMWAD (ALL 5 EVENTS) --- */
         .samwad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .samwad-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 6px solid var(--orange-primary); transition: 0.3s; }
         .samwad-card:hover { transform: scale(1.02); }
         .samwad-img { height: 220px; width: 100%; object-fit: cover; }
         .samwad-content { padding: 30px; }
         .samwad-date { color: var(--yinmn-blue); font-weight: 800; font-size: 0.9rem; margin-bottom: 12px; display: block; text-transform: uppercase; }
-        .samwad-content h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--space-cadet); }
 
         /* --- CONTACT & FORM --- */
         .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: var(--white); padding: 60px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.05); }
-        input, select, textarea { width: 100%; padding: 18px; border: 2px solid var(--lavender-web); border-radius: 10px; margin-bottom: 25px; outline: none; transition: 0.3s; font-family: inherit; }
-        input:focus { border-color: var(--orange-primary); }
+        input, select, textarea { width: 100%; padding: 18px; border: 2px solid var(--lavender-web); border-radius: 10px; margin-bottom: 25px; outline: none; }
         .submit-btn { background: var(--orange-primary); color: white; border: none; padding: 22px; width: 100%; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 1.2rem; transition: 0.3s; }
         .submit-btn:hover { background: var(--space-cadet); transform: translateY(-3px); }
 
-        /* Social Icons Section */
-        .social-links { display: flex; gap: 15px; margin-top: 30px; }
-        .social-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--lavender-web); color: var(--delft-blue); text-decoration: none; transition: 0.3s; font-size: 1.2rem; }
-        .social-icon:hover { background: var(--orange-primary); color: white; transform: translateY(-3px); }
+        /* --- FOOTER --- */
+        footer { background: var(--space-cadet); color: var(--white); padding: 80px 10% 40px 10%; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { color: var(--orange-primary); margin-bottom: 25px; font-size: 1.4rem; }
+        .footer-col p, .footer-col a { color: var(--white); opacity: 0.8; text-decoration: none; display: block; margin-bottom: 12px; }
+        .footer-col a:hover { opacity: 1; color: var(--orange-primary); }
+        .footer-social { display: flex; gap: 15px; margin-top: 20px; }
+        .social-btn { width: 45px; height: 45px; border-radius: 50%; background: var(--yinmn-blue); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
+        .social-btn:hover { background: var(--orange-primary); transform: translateY(-3px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; opacity: 0.6; font-size: 0.9rem; }
 
-        footer { background: var(--space-cadet); color: white; text-align: center; padding: 60px; }
-
-        @media (max-width: 1024px) { .course-body, .founder-grid, .contact-container, .network-bar { grid-template-columns: 1fr; flex-direction: column; } }
+        @media (max-width: 1024px) { .footer-grid, .contact-container, .course-body { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#" class="nav-brand">
-            <img src="images/logo final.jpeg" alt="Bhopal Logo">
+            <img src="images/logo final.jpeg" alt="Logo">
             <span>Bhopal Kendra</span>
         </a>
         <div class="nav-links">
@@ -149,10 +151,9 @@
     <section id="about">
         <div class="founder-grid">
             <div class="founder-img"><img src="images/founder.png" alt="Kulapati K.M. Munshi"></div>
-            <div class="founder-text">
+            <div>
                 <h2 style="color: var(--delft-blue); margin-bottom: 25px;">Kulapati Kanhaiyalal Maneklal Munshi</h2>
-                <p>Founded the Bhavan on November 7, 1938—an 'Adventure in Faith'—faith in India's Past, Present and Future.</p>
-                <p style="margin-top: 20px;">Dedicated to the preservation and propagation of Bharatiya Sanskriti, the mother of languages, the Akshaya Patra, the inexhaustible reservoir.</p>
+                <p>Founded on Monday, November 7, 1938, the Bhavan is an 'Adventure in Faith'—faith in India's Past, Present and Future. Dedicated to the preservation and propagation of Bharatiya Sanskriti.</p>
                 <p style="margin-top: 25px; font-weight: 700; color: var(--orange-primary); font-style: italic; font-size: 1.2rem;">"Let noble thoughts come to us from every side."</p>
             </div>
         </div>
@@ -182,15 +183,15 @@
                 <div class="course-left">
                     <div class="scope-box">
                         <h4>Career Scope</h4>
-                        <p>HR-related jobs in private/government sectors, consulting, entrepreneurship. For graduates wanting HRD skills without MBA costs.</p>
+                        <p>HR-related jobs in private and government sectors, consulting, entrepreneurship. For graduates wanting skills without MBA costs.</p>
                     </div>
                     <div class="meta-pill">
-                        <div><i class="far fa-clock"></i> 150 Contact Hours</div>
-                        <div><i class="fas fa-calendar-alt"></i> Evening Batches</div>
+                        <div>Contact Hours: 150 hours</div>
+                        <div>Batch Timings: Evening batches</div>
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 25px; font-size: 1.3rem;">Course Structure</h4>
+                    <h4>Course Structure</h4>
                     <ul class="structure-list">
                         <li>Paper 1: Organizational Behaviour</li>
                         <li>Paper 2: Personnel Management</li>
@@ -209,20 +210,20 @@
                 <div class="course-left">
                     <div class="scope-box">
                         <h4>Career Scope</h4>
-                        <p>News portals, TV News channels, Newspapers, Content Writing/Marketing for news and non-news sectors.</p>
+                        <p>News portals, TV News channel, Newspapers, Content Writing and Marketing for news and non-news sectors.</p>
                     </div>
                     <div class="meta-pill">
-                        <div><i class="far fa-clock"></i> 150 Contact Hours</div>
-                        <div><i class="fas fa-calendar-alt"></i> Evening Batches</div>
+                        <div>Contact Hours: 150 hours</div>
+                        <div>Batch Timings: Evening batches</div>
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 25px; font-size: 1.3rem;">Course Structure</h4>
+                    <h4>Course Structure</h4>
                     <ul class="structure-list">
                         <li>Paper 1: Understanding Digital Media and laws</li>
                         <li>Paper 2: Reporting and Content Generation</li>
                         <li>Paper 3: Advanced Journalistic Writing</li>
-                        <li>Paper 4: Social Media & Marketing</li>
+                        <li>Paper 4: Social Media, Content Marketing & Distribution</li>
                         <li>Paper 5: Multimedia Journalism</li>
                         <li>Paper 6: Cultural Heritage of India</li>
                     </ul>
@@ -236,15 +237,15 @@
                 <div class="course-left">
                     <div class="scope-box">
                         <h4>Career Scope</h4>
-                        <p>Offices of C&F Agents, Shipping Lines, ports, execution of export-import, foreign exchange, etc.</p>
+                        <p>Offices of C&F Agents, CHAs, ICDs, Shipping Lines, ports, airports, foreign exchange documentation.</p>
                     </div>
                     <div class="meta-pill">
-                        <div><i class="far fa-clock"></i> 150 Contact Hours</div>
-                        <div><i class="fas fa-calendar-alt"></i> Evening Batches</div>
+                        <div>Contact Hours: 150 hours</div>
+                        <div>Batch Timings: Evening classes</div>
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 25px; font-size: 1.3rem;">Course Structure</h4>
+                    <h4>Course Structure</h4>
                     <ul class="structure-list">
                         <li>Paper 1: Port Operations (Maritime)</li>
                         <li>Paper 2: Supply Chain Management</li>
@@ -314,8 +315,8 @@
                 <img src="images/5.jpeg" class="samwad-img">
                 <div class="samwad-content">
                     <span class="samwad-date">Activities</span>
-                    <h3>Bhavans Bhopal Kendra Events</h3>
-                    <p>Focus on Cultural and Social Development</p>
+                    <h3>Bhopal Kendra Events</h3>
+                    <p>Focus on Cultural Development</p>
                 </div>
             </div>
         </div>
@@ -329,17 +330,12 @@
                 <p><strong>Email:</strong> bvbbhopal123@gmail.com</p>
                 <p><strong>Landline:</strong> 07554850381</p>
                 
-                <div class="social-links">
-                    <a href="https://facebook.com" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-
-                <div style="margin-top: 30px; border-radius: 15px; overflow: hidden; height: 300px; border: 5px solid var(--white);">
-                    <iframe src="http://googleusercontent.com/maps.google.com/8" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div style="margin-top: 30px; border-radius: 20px; overflow: hidden; height: 350px; border: 6px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3312389647225!2d77.42777611497144!3d23.23094868484837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4273873919b3%3A0xc039641498b9f69b!2sBharatiya%20Vidya%20Bhavan!5e0!3m2!1sen!2sin!4v1611681234567!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div>
-                <h3>Course Enquiry Form</h3>
+                <h3>Enquiry Form</h3>
                 <form action="https://formspree.io/f/mqknpogz" method="POST" style="margin-top: 25px;">
                     <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email Address" required>
@@ -349,7 +345,7 @@
                         <option value="Digital Media">Digital Media</option>
                         <option value="Trade">International Trade</option>
                     </select>
-                    <textarea name="message" rows="5" placeholder="How can we help you?"></textarea>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="submit-btn">Submit Enquiry</button>
                 </form>
             </div>
@@ -357,12 +353,36 @@
     </section>
 
     <footer>
-        <p>© 2026 Bharatiya Vidya Bhavan - Bhopal Kendra.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Bhopal Kendra</h4>
+                <p>Bhavan's Institute Of Communication & Management</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#courses">Courses</a>
+                <a href="#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Reach Us</h4>
+                <p><i class="fas fa-phone"></i> 07554850381</p>
+                <p><i class="fas fa-envelope"></i> bvbbhopal123@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> MP Nagar Zone-1, Bhopal</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Infrastructure Swiper
         new Swiper(".infraSwiper", {
             slidesPerView: 1, spaceBetween: 30, loop: true,
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
@@ -370,7 +390,6 @@
             breakpoints: { 768: { slidesPerView: 2 } }
         });
         
-        // Governance Swiper
         new Swiper(".memberSwiper", {
             slidesPerView: 1, spaceBetween: 30, loop: true,
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
