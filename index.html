@@ -36,38 +36,31 @@
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
 
-        /* --- STICKY NAVIGATION --- */
+        /* --- NAVIGATION --- */
         nav {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            height: var(--nav-height);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%;
+            height: var(--nav-height); background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); display: flex; align-items: center;
+            justify-content: space-between; padding: 0 5%; z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .nav-brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--navy-dark); font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; }
+        .nav-brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--navy-dark); font-weight: 700; font-size: 1.1rem; }
         .nav-brand img { height: 50px; width: auto; }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--navy-dark); font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--orange-primary); }
         .nav-cta { background: var(--orange-primary); color: white !important; padding: 0.6rem 1.5rem; border-radius: 50px; }
-        .menu-toggle { display: none; }
 
         /* --- HERO --- */
         .hero {
             background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--blue-slate) 100%);
-            min-height: calc(100vh - var(--nav-height));
+            min-height: calc(80vh - var(--nav-height));
             display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;
         }
         .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); margin-bottom: 1rem; }
         .hero .subtitle { font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--lavender); margin-bottom: 2rem; }
-        .hero-cta { display: inline-block; padding: 1.2rem 3rem; background: var(--orange-primary); color: white; text-decoration: none; font-weight: 600; border-radius: 50px; transition: 0.3s; }
+        .hero-cta { display: inline-block; padding: 1.2rem 3rem; background: var(--orange-primary); color: white; text-decoration: none; font-weight: 600; border-radius: 50px; }
 
         /* --- SECTIONS --- */
         section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
@@ -75,54 +68,71 @@
         .section-header h2 { font-size: clamp(2rem, 4vw, 3.5rem); position: relative; display: inline-block; }
         .section-header h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60%; height: 4px; background: var(--orange-primary); }
 
-        /* --- FOUNDER (Img1 + Img5 Content) --- */
-        .founder-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
-        .founder-image-box { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; }
+        .fade-in { opacity: 0; transform: translateY(15px); transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- FOUNDER (Img1 + Img5 Integrated) --- */
+        .founder { background: linear-gradient(135deg, var(--lavender) 0%, var(--white) 100%); }
+        .founder-grid { display: grid; grid-template-columns: 300px 1fr; gap: 4rem; align-items: start; }
+        .founder-image-box { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 300px; position: sticky; top: 120px; }
         .founder-image-box img { width: 100%; height: auto; display: block; }
-        .founder-bio { color: var(--navy-dark); }
         .founder-bio h3 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--navy-mid); }
         .founder-bio p { margin-bottom: 1.2rem; text-align: justify; }
 
-        /* --- NETWORK (Img2 - No Map, Side-by-Side) --- */
+        /* --- NETWORK (Img2 - Single Row) --- */
         .network-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .network-card { padding: 2.5rem; border-radius: 25px; height: 100%; }
+        .network-card { padding: 2.5rem; border-radius: 25px; }
         .network-stats { background: linear-gradient(135deg, var(--navy-dark), var(--blue-slate)); color: white; }
-        .network-locations { background: var(--lavender); color: var(--navy-dark); }
         .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center; }
         .stat-number { font-size: 2.2rem; font-weight: 900; color: var(--orange-primary); display: block; }
+        .network-locations { background: var(--lavender); color: var(--navy-dark); }
         .location-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1rem; }
 
-        /* --- COURSES (Img3 - Two Column Layout) --- */
-        .course-card { background: white; border-radius: 30px; overflow: hidden; margin-bottom: 4rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        .course-header { background: var(--navy-dark); color: white; padding: 1.5rem 3rem; }
-        .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3rem; }
-        .course-left h4 { color: var(--orange-primary); margin-bottom: 1rem; }
-        .course-info-box { background: var(--cream); padding: 1.5rem; border-radius: 15px; margin-top: 2rem; display: flex; gap: 2rem; }
-        .course-right { border-left: 1px solid var(--lavender); padding-left: 3rem; }
-        .course-section ul { list-style: none; }
-        .course-section li { padding: 0.5rem 0; position: relative; padding-left: 1.5rem; }
-        .course-section li::before { content: '▸'; position: absolute; left: 0; color: var(--orange-primary); font-weight: bold; }
+        /* --- BOARD CAROUSEL (All Images Fixed) --- */
+        .members-carousel { display: flex; overflow-x: auto; gap: 2rem; padding: 2rem 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
+        .members-carousel::-webkit-scrollbar { display: none; }
+        .member-card { min-width: 300px; text-align: center; padding: 2.5rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); scroll-snap-align: center; }
+        .member-image { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1.5rem; overflow: hidden; border: 5px solid var(--lavender); }
+        .member-image img { width: 100%; height: 100%; object-fit: cover; }
+        .role { color: var(--orange-primary); font-weight: 600; }
 
-        /* --- CONTACT (Img4 - Map + Address + Socials) --- */
-        .contact-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; background: white; padding: 3rem; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
-        .contact-details { display: flex; flex-direction: column; gap: 2rem; }
-        .map-box { width: 100%; height: 300px; border-radius: 20px; overflow: hidden; border: 1px solid var(--lavender); }
-        .social-icons { display: flex; gap: 1.5rem; margin-top: 1rem; }
-        .social-icons a { font-size: 1.8rem; color: var(--navy-mid); transition: 0.3s; }
-        .social-icons a:hover { color: var(--orange-primary); }
-        
-        .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1.2rem; border: 2px solid var(--lavender); border-radius: 12px; font-family: inherit; }
-        .contact-form textarea { resize: none; }
-        .submit-btn { width: 100%; padding: 1.2rem; background: var(--orange-primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; font-size: 1.1rem; }
-        .submit-btn:hover { background: var(--orange-dark); transform: translateY(-3px); }
+        /* --- COURSES (Img3 - 2 Columns) --- */
+        .course-card { background: white; border-radius: 30px; overflow: hidden; margin-bottom: 4rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid var(--lavender); }
+        .course-header { background: var(--navy-dark); color: white; padding: 1.5rem 3rem; }
+        .course-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; padding: 3rem; }
+        .course-info-box { background: var(--cream); padding: 1.5rem; border-radius: 15px; margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .course-right { border-left: 1px solid var(--lavender); padding-left: 3rem; }
+        .course-list { list-style: none; }
+        .course-list li { padding: 0.6rem 0; position: relative; padding-left: 1.5rem; color: var(--navy-dark); border-bottom: 1px solid #f0f0f0; }
+        .course-list li::before { content: '▸'; position: absolute; left: 0; color: var(--orange-primary); font-weight: bold; }
+
+        /* --- ACTIVITIES --- */
+        .activities { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--blue-slate) 100%); color: var(--white); }
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .activity-card { background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 20px; }
+        .activity-image { width: 100%; height: 200px; border-radius: 15px; overflow: hidden; margin-bottom: 1rem; }
+        .activity-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- INFRASTRUCTURE --- */
+        .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .infra-card { border-radius: 20px; overflow: hidden; height: 250px; }
+        .infra-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- CONTACT (Img4 Redesign) --- */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: white; padding: 4rem; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        .contact-map { width: 100%; height: 350px; border-radius: 20px; overflow: hidden; margin-bottom: 2rem; }
+        .social-links { display: flex; gap: 1.5rem; margin-top: 1.5rem; }
+        .social-links a { font-size: 2rem; color: var(--navy-dark); transition: 0.3s; }
+        .social-links a:hover { color: var(--orange-primary); }
+        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1.2rem; border: 2px solid var(--lavender); border-radius: 12px; font-family: inherit; }
+        .submit-btn { width: 100%; padding: 1.2rem; background: var(--orange-primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
 
         footer { background: var(--navy-dark); color: var(--lavender); padding: 3rem; text-align: center; }
 
-        /* Mobile */
         @media (max-width: 968px) {
             .founder-grid, .network-row, .course-grid, .contact-container { grid-template-columns: 1fr; }
+            .founder-image-box { width: 100%; position: static; }
             .course-right { border-left: none; padding-left: 0; border-top: 1px solid var(--lavender); padding-top: 2rem; }
-            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -165,7 +175,7 @@
                 <p>Kulapati Kanhaiyalal Maneklal Munshi founded the Bhavan on Monday, November 7, 1938. It was the beginning of an 'Adventure in Faith'. A faith in India's Past, Present and Future. The founding of Bhavan was based on the preservation and propagation of Bharatiya Sanskriti, the mother of languages, the Akshaya Patra, the inexhaustible reservoir.</p>
                 <p>Over the years, from being a modest indological research institution, the Bhavan has steadily grown into a comprehensive, co-operative, apolitical national movement with an international outlook. It seeks to inculcate a value-based life, the promotion of ethical and spiritual values in everything it does.</p>
                 <p>Bharatiya Vidya Bhavan is the only comprehensive organisation of its kind in India and perhaps the only one in the world. The Bhavan steadfastly adheres to the Vedic ideal: <em>"Let noble thoughts come to us from every side."</em></p>
-                <p style="color: var(--orange-primary); font-weight: 600; text-align: center;">"Harmony of all faiths. Sarva Dharma Sama Bhava."</p>
+                <p style="color: var(--orange-primary); font-weight: 700; text-align: center;">"Harmony of all faiths. Sarva Dharma Sama Bhava."</p>
             </div>
         </div>
     </section>
@@ -184,13 +194,43 @@
             <div class="network-card network-locations">
                 <h4>International Centres</h4>
                 <ul class="location-list">
-                    <li>📍 London, U.K</li>
-                    <li>📍 New York, U.S.A</li>
-                    <li>📍 Kuwait, UAE</li>
-                    <li>📍 Doha, Qatar</li>
-                    <li>📍 Abu Dhabi, UAE</li>
+                    <li>📍 London, U.K</li><li>📍 New York, U.S.A</li><li>📍 Kuwait, UAE</li><li>📍 Doha, Qatar</li><li>📍 Abu Dhabi, UAE</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section class="board">
+        <div class="section-header"><h2>Governance & Board Members</h2></div>
+        <div class="members-carousel">
+            <div class="member-card"><div class="member-image"><img src="images/s K Routh.png"></div><h3>Shri S.K. Rout</h3><p class="role">Chairman (IPS Retd)</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Salil Chaterjee.jpeg"></div><h3>Shri Salil Chatterjee</h3><p class="role">Secretary</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Sanat Gangwal.jpeg"></div><h3>Shri Sanat Gangwal</h3><p class="role">Treasurer</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Vikas Choudhary.jpeg"></div><h3>Shri Vikas Chaudhary</h3><p class="role">Member</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/R G Dwivedi.jpeg"></div><h3>Shri R.G. Dwivedi</h3><p class="role">Member</p></div>
+            <div class="member-card"><div class="member-image"><img src="images/Hina.png"></div><h3>Ms. Hina Rout</h3><p class="role">Member</p></div>
+        </div>
+    </section>
+
+    <section class="activities">
+        <div class="section-header"><h2>Bouddhik Samwad</h2></div>
+        <div class="activities-grid">
+            <div class="activity-card"><div class="activity-image"><img src="images/1.jpeg"></div><span class="activity-date">22-01-2026</span><h3>Demography Challenges</h3><p>Speaker: Mr. N.K. Tripathi, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/2.jpeg"></div><span class="activity-date">30-10-2025</span><h3>Indo American Relations</h3><p>Speaker: Mr. Ajatshatru Shrivastava, IAS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/3.jpeg"></div><span class="activity-date">29-08-2025</span><h3>Bharatiya Gyan Parampara</h3><p>Speaker: Dr. Shailendra Shrivastava, IPS (Retd)</p></div>
+            <div class="activity-card"><div class="activity-image"><img src="images/4.jpeg"></div><span class="activity-date">18-07-2025</span><h3>National Security</h3><p>Speaker: Shri S.K. Rout, IPS (Retd)</p></div>
+        </div>
+    </section>
+
+    <section class="infrastructure">
+        <div class="section-header"><h2>Infrastructure</h2></div>
+        <div class="infra-grid">
+            <div class="infra-card"><img src="images/infra 1 (1).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (2).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (3).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (4).jpg"></div>
+            <div class="infra-card"><img src="images/infra 1 (5).jpg"></div>
+            <div class="infra-card"><img src="images/5.jpeg"></div>
         </div>
     </section>
 
@@ -201,47 +241,37 @@
             <div class="course-header"><h3>Industrial Relations & Personnel Management</h3></div>
             <div class="course-grid">
                 <div class="course-left">
-                    <h4>| Career Scope</h4>
-                    <p>HR-related jobs in private and government sectors, consulting, and entrepreneurship. Best for those seeking HR skills without lengthy MBA courses.</p>
+                    <h4 style="color: var(--orange-primary);">| Career Scope</h4>
+                    <p>HR roles in private/govt sectors, consulting, and entrepreneurship. Best for those seeking HR skills without lengthy MBA courses.</p>
                     <div class="course-info-box">
-                        <div><strong>Hours</strong><br>150 Contact Hours</div>
-                        <div><strong>Timings</strong><br>Evening Batches</div>
+                        <div><strong>Hours</strong><br>150 Hours</div>
+                        <div><strong>Batch</strong><br>Evening</div>
                     </div>
                 </div>
                 <div class="course-right">
                     <h4>Course Structure</h4>
-                    <ul class="course-section">
-                        <li>Paper 1: Organizational Behaviour</li>
-                        <li>Paper 2: Personnel Management</li>
-                        <li>Paper 3: Human Resources Development</li>
-                        <li>Paper 4: Industrial Relations</li>
-                        <li>Paper 5: Labour Legislation</li>
-                        <li>Paper 6: Cultural Heritage of India</li>
+                    <ul class="course-list">
+                        <li>Paper 1: Organizational Behaviour</li><li>Paper 2: Personnel Management</li><li>Paper 3: Human Resources Development</li><li>Paper 4: Industrial Relations</li><li>Paper 5: Labour Legislation</li><li>Paper 6: Cultural Heritage of India</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="course-card">
-            <div class="course-header"><h3>Digital Media (Journalism & Marketing)</h3></div>
+            <div class="course-header"><h3>Digital Media</h3></div>
             <div class="course-grid">
                 <div class="course-left">
-                    <h4>| Career Scope</h4>
-                    <p>News portals, TV News channels, Content Writing, and Content Marketing for both news and non-news sectors. Designed for graduates and working professionals.</p>
+                    <h4 style="color: var(--orange-primary);">| Career Scope</h4>
+                    <p>News portals, TV channels, Content Marketing. Ideal for graduates wanting digital media careers.</p>
                     <div class="course-info-box">
-                        <div><strong>Hours</strong><br>150 Contact Hours</div>
-                        <div><strong>Timings</strong><br>Evening Classes</div>
+                        <div><strong>Hours</strong><br>150 Hours</div>
+                        <div><strong>Batch</strong><br>Evening</div>
                     </div>
                 </div>
                 <div class="course-right">
                     <h4>Course Structure</h4>
-                    <ul class="course-section">
-                        <li>Paper 1: Understanding Digital Media & Laws</li>
-                        <li>Paper 2: Reporting and Content Generation</li>
-                        <li>Paper 3: Advanced Journalistic Writing</li>
-                        <li>Paper 4: Social Media & Distribution</li>
-                        <li>Paper 5: Multimedia Journalism</li>
-                        <li>Paper 6: Cultural Heritage of India</li>
+                    <ul class="course-list">
+                        <li>Paper 1: Understanding Digital Media & Laws</li><li>Paper 2: Reporting and Content Generation</li><li>Paper 3: Advanced Journalistic Writing</li><li>Paper 4: Social Media Distribution</li><li>Paper 5: Multimedia Journalism</li><li>Paper 6: Cultural Heritage of India</li>
                     </ul>
                 </div>
             </div>
@@ -251,22 +281,17 @@
             <div class="course-header"><h3>International Trade (Import-Export)</h3></div>
             <div class="course-grid">
                 <div class="course-left">
-                    <h4>| Career Scope</h4>
-                    <p>Shipping Lines, Port Operations, ICDs, and Foreign Exchange execution. Suitable for entrepreneurs and corporate executives re-joining the sector.</p>
+                    <h4 style="color: var(--orange-primary);">| Career Scope</h4>
+                    <p>Logistics, Shipping Lines, EXIM documentation. Suitable for corporate executives and industrialists.</p>
                     <div class="course-info-box">
-                        <div><strong>Hours</strong><br>150 Contact Hours</div>
-                        <div><strong>Timings</strong><br>Evening Classes</div>
+                        <div><strong>Hours</strong><br>150 Hours</div>
+                        <div><strong>Batch</strong><br>Evening</div>
                     </div>
                 </div>
                 <div class="course-right">
                     <h4>Course Structure</h4>
-                    <ul class="course-section">
-                        <li>Paper 1: Port Operations (Maritime)</li>
-                        <li>Paper 2: Supply Chain Management</li>
-                        <li>Paper 3: Financial Management for EXIM</li>
-                        <li>Paper 4: Global Commercial Ecosystem</li>
-                        <li>Paper 5: Export Import Practices & Procedures</li>
-                        <li>Paper 6: Cultural Heritage of India</li>
+                    <ul class="course-list">
+                        <li>Paper 1: Port Operations</li><li>Paper 2: Supply Chain Management</li><li>Paper 3: Financial Management for EXIM</li><li>Paper 4: Global Commercial Ecosystem</li><li>Paper 5: Export Import Practices & Procedures</li><li>Paper 6: Cultural Heritage of India</li>
                     </ul>
                 </div>
             </div>
@@ -274,34 +299,29 @@
     </section>
 
     <section id="contact">
-        <div class="section-header"><h2>Get in Touch</h2></div>
         <div class="contact-container">
-            <div class="contact-details">
-                <div class="map-box">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3217032734125!2d77.43265537587082!3d23.23139880851167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4243e963c19d%3A0xb0519e933238cd0d!2sBharti%20Vidhya%20Bhawan!5e0!3m2!1sen!2sin!4v1705432000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="contact-left">
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2163989344485!2d77.4300302!3d23.2351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4268393699c1%3A0xc486438883624e5!2sMP%20Nagar%20Zone%201%2C%20Bhopal!5e0!3m2!1sen!2sin!4v17000000000006" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div>
-                    <h4 style="margin-bottom: 0.5rem;">Address</h4>
+                <div class="address-box">
+                    <h4>Address</h4>
                     <p>Bharatiya Vidya Bhavan, Bhopal Kendra<br>MP Nagar Zone-1, Opp. Yes Bank, Bhopal - 462023</p>
-                    <p style="margin-top: 1rem;"><strong>Email:</strong> bvbbhopal123@gmail.com</p>
+                    <p style="margin-top:1rem;"><strong>Email:</strong> bvbbhopal123@gmail.com</p>
                     <p><strong>Phone:</strong> 0755-4850381</p>
                 </div>
-                <div class="social-icons">
+                <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="contact-form">
-                <h4 style="margin-bottom: 1.5rem;">Enquiry Form</h4>
                 <form action="https://formspree.io/f/mqknpogz" method="POST">
                     <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email Address" required>
-                    <input type="tel" name="phone" placeholder="Phone Number">
                     <select name="course" required>
-                        <option value="">Select Interested Course</option>
-                        <option>HR Management</option>
-                        <option>Digital Media</option>
-                        <option>International Trade</option>
+                        <option value="">Interested Course</option>
+                        <option>HR Management</option><option>Digital Media</option><option>International Trade</option>
                     </select>
                     <textarea name="message" placeholder="Your Message" rows="5"></textarea>
                     <button type="submit" class="submit-btn">Submit Enquiry</button>
@@ -312,5 +332,16 @@
 
     <footer><p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra. All rights reserved.</p></footer>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
