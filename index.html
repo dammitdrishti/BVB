@@ -64,18 +64,16 @@
         .structure-list li { padding: 15px 0; border-bottom: 1px solid var(--lavender-web); display: flex; align-items: center; gap: 12px; font-weight: 500; }
         .structure-list li::before { content: "▶"; color: var(--orange-primary); font-size: 0.7rem; }
 
-        /* --- PREMIUM MEMBERS CAROUSEL IMPROVEMENT --- */
+        /* --- IMPROVED MEMBERS CAROUSEL --- */
         .swiper { width: 100%; padding-bottom: 100px !important; }
         .swiper-button-next, .swiper-button-prev { color: var(--orange-primary) !important; background: white; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); top: 40%; }
         .swiper-pagination { bottom: 20px !important; }
         
-        .member-card { background: linear-gradient(145deg, #ffffff, #f1f3ff); padding: 50px 30px; border-radius: 25px; text-align: center; height: 100%; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; overflow: hidden; }
-        .member-card:hover { transform: translateY(-15px); background: var(--space-cadet); color: white; box-shadow: 0 25px 50px rgba(38, 40, 66, 0.3); }
-        .member-card img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--white); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; }
-        .member-card:hover img { border-color: var(--orange-primary); transform: scale(1.05); }
-        .member-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
-        .member-card p { font-size: 1rem; color: var(--orange-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        .member-card:hover p { color: var(--cool-gray); }
+        .member-card { background: linear-gradient(145deg, #ffffff, #f1f3ff); padding: 50px 30px; border-radius: 25px; text-align: center; height: 100%; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .member-card:hover { transform: translateY(-15px); background: var(--space-cadet); color: white; }
+        .member-card img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--white); transition: 0.3s; }
+        .member-card:hover img { border-color: var(--orange-primary); }
+        .member-card p { font-size: 1rem; color: var(--orange-primary); font-weight: 600; text-transform: uppercase; }
 
         /* --- BOUDDHIK SAMWAD --- */
         .samwad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
@@ -94,8 +92,11 @@
         .footer-col h4 { color: var(--orange-primary); margin-bottom: 25px; font-size: 1.4rem; }
         .footer-col p, .footer-col a { color: var(--white); opacity: 0.8; text-decoration: none; display: block; margin-bottom: 12px; }
         .footer-social { display: flex; gap: 15px; margin-top: 25px; }
+        
+        /* ICONS SECTION */
         .social-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--yinmn-blue); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; font-size: 1.4rem; }
-        .social-btn:hover { background: var(--orange-primary); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .social-btn:hover { background: var(--orange-primary); transform: translateY(-5px); }
+        
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; opacity: 0.6; font-size: 0.9rem; }
 
         @media (max-width: 1024px) { .footer-grid, .contact-container, .course-body { grid-template-columns: 1fr; } }
@@ -134,8 +135,8 @@
             <div class="founder-img"><img src="images/founder.png" alt="Kulapati K.M. Munshi"></div>
             <div>
                 <h2 style="color: var(--delft-blue); margin-bottom: 25px;">Kulapati Kanhaiyalal Maneklal Munshi</h2>
-                <p>Founded on Monday, November 7, 1938, the Bhavan is an 'Adventure in Faith'—faith in India's Past, Present and Future. [cite: 1, 3] Dedicated to the preservation and propagation of Bharatiya Sanskriti. [cite: 1, 3]</p>
-                <p style="margin-top: 25px; font-weight: 700; color: var(--orange-primary); font-style: italic; font-size: 1.2rem;">"Let noble thoughts come to us from every side." [cite: 1, 3]</p>
+                <p>Founded on Monday, November 7, 1938, the Bhavan stands as an 'Adventure in Faith'—faith in India's Past, Present and Future. Dedicated to the preservation and propagation of Bharatiya Sanskriti[cite: 1].</p>
+                <p style="margin-top: 25px; font-weight: 700; color: var(--orange-primary); font-style: italic; font-size: 1.2rem;">"Let noble thoughts come to us from every side."</p>
             </div>
         </div>
     </section>
@@ -156,84 +157,84 @@
     </section>
 
     <section id="courses">
-        <h2 class="section-title">Professional Diploma Courses [cite: 1, 29]</h2>
+        <h2 class="section-title">Professional Diploma Courses</h2>
 
         <div class="course-container">
-            <div class="course-banner">Industrial Relations and Personnel Management [cite: 1, 30]</div>
+            <div class="course-banner">Industrial Relations and Personnel Management</div>
             <div class="course-body">
                 <div class="course-left">
                     <div class="scope-box">
-                        <h4>Career Scope [cite: 1, 32]</h4>
-                        <p>HR roles in private and government sectors, consulting, entrepreneurship. [cite: 1, 33] Ideal for those avoiding expensive MBA courses. [cite: 1, 45]</p>
+                        <h4>Career Scope</h4>
+                        <p>HR roles in private and government sectors, consulting, entrepreneurship[cite: 33].</p>
                     </div>
                     <div class="meta-pill">
-                        <div>Contact Hours: 150 hours [cite: 1, 50]</div>
-                        <div>Batch Timings: Evening batches [cite: 1, 51]</div>
+                        <div>Contact Hours: 150 hours [cite: 50]</div>
+                        <div>Batch Timings: Evening batches [cite: 51]</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Course Structure [cite: 1, 35]</h4>
+                    <h4>Course Structure</h4>
                     <ul class="structure-list">
-                        <li>Paper 1: Organizational Behaviour [cite: 1, 36]</li>
-                        <li>Paper 2: Personnel Management [cite: 1, 37]</li>
-                        <li>Paper 3: Human Resources Development [cite: 1, 38]</li>
-                        <li>Paper 4: Industrial Relations [cite: 1, 39]</li>
-                        <li>Paper 5: Labour Legislation [cite: 1, 40]</li>
-                        <li>Paper 6: Cultural Heritage of India [cite: 1, 41]</li>
+                        <li>Paper 1: Organizational Behaviour [cite: 36]</li>
+                        <li>Paper 2: Personnel Management [cite: 37]</li>
+                        <li>Paper 3: Human Resources Development [cite: 38]</li>
+                        <li>Paper 4: Industrial Relations [cite: 39]</li>
+                        <li>Paper 5: Labour Legislation [cite: 40]</li>
+                        <li>Paper 6: Cultural Heritage of India [cite: 41]</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="course-container">
-            <div class="course-banner">PG Diploma in Digital Media [cite: 1, 52]</div>
+            <div class="course-banner">PG Diploma in Digital Media</div>
             <div class="course-body">
                 <div class="course-left">
                     <div class="scope-box">
-                        <h4>Career Scope [cite: 1, 54]</h4>
-                        <p>News portals, TV News channels, Newspapers, Content Writing/Marketing. [cite: 1, 55]</p>
+                        <h4>Career Scope</h4>
+                        <p>News portals, TV News channel, Newspapers, Content Writing/Marketing[cite: 55].</p>
                     </div>
                     <div class="meta-pill">
-                        <div>Contact Hours: 150 hours [cite: 1, 50]</div>
-                        <div>Batch Timings: Evening batches [cite: 1, 51]</div>
+                        <div>Contact Hours: 150 hours [cite: 50]</div>
+                        <div>Batch Timings: Evening batches [cite: 51]</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Course Structure [cite: 1, 57]</h4>
+                    <h4>Course Structure</h4>
                     <ul class="structure-list">
-                        <li>Paper 1: Understanding Digital Media and laws [cite: 1, 58]</li>
-                        <li>Paper 2: Reporting and Content Generation [cite: 1, 59]</li>
-                        <li>Paper 3: Advanced Journalistic Writing [cite: 1, 60]</li>
-                        <li>Paper 4: Social Media & Marketing [cite: 1, 61]</li>
-                        <li>Paper 5: Multimedia Journalism [cite: 1, 62]</li>
-                        <li>Paper 6: Cultural Heritage of India [cite: 1, 63]</li>
+                        <li>Paper 1: Understanding Digital Media & laws [cite: 58]</li>
+                        <li>Paper 2: Reporting and Content Generation [cite: 59]</li>
+                        <li>Paper 3: Advanced Journalistic Writing [cite: 60]</li>
+                        <li>Paper 4: Social Media, Marketing & Distribution [cite: 61]</li>
+                        <li>Paper 5: Multimedia Journalism [cite: 62]</li>
+                        <li>Paper 6: Cultural Heritage of India [cite: 63]</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="course-container">
-            <div class="course-banner">PG Diploma in International Trade [cite: 1, 71]</div>
+            <div class="course-banner">PG Diploma in International Trade</div>
             <div class="course-body">
                 <div class="course-left">
                     <div class="scope-box">
-                        <h4>Career Scope [cite: 1, 73]</h4>
-                        <p>Shipping Lines, ports, airports, execution of export-import documentation. [cite: 1, 73, 84]</p>
+                        <h4>Career Scope</h4>
+                        <p>Shipping Lines, ports, airports, Railways, execution of export-import documentation[cite: 73].</p>
                     </div>
                     <div class="meta-pill">
-                        <div>Contact Hours: 150 hours [cite: 1, 89]</div>
-                        <div>Batch Timings: Evening classes [cite: 1, 90]</div>
+                        <div>Contact Hours: 150 hours [cite: 89]</div>
+                        <div>Batch Timings: Evening classes [cite: 90]</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Course Structure [cite: 1, 75]</h4>
+                    <h4>Course Structure</h4>
                     <ul class="structure-list">
-                        <li>Paper 1: Port Operations (Maritime) [cite: 1, 76]</li>
-                        <li>Paper 2: Supply Chain Management [cite: 1, 76]</li>
-                        <li>Paper 3: Financial Management for EXIM [cite: 1, 76]</li>
-                        <li>Paper 4: Global Commercial Ecosystem [cite: 1, 76]</li>
-                        <li>Paper 5: Export Import Practices [cite: 1, 76]</li>
-                        <li>Paper 6: Cultural Heritage of India [cite: 1, 76]</li>
+                        <li>Paper 1: Port Operations (Maritime) [cite: 76]</li>
+                        <li>Paper 2: Supply Chain Management [cite: 76]</li>
+                        <li>Paper 3: Financial Management [cite: 76]</li>
+                        <li>Paper 4: Global Commercial Ecosystem [cite: 76]</li>
+                        <li>Paper 5: EXIM Practices & Procedures [cite: 76]</li>
+                        <li>Paper 6: Cultural Heritage of India [cite: 76]</li>
                     </ul>
                 </div>
             </div>
@@ -241,15 +242,15 @@
     </section>
 
     <section id="governance" style="background: var(--lavender-web);">
-        <h2 class="section-title">Members on Board [cite: 1, 3]</h2>
+        <h2 class="section-title">Members on Board</h2>
         <div class="swiper memberSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><div class="member-card"><img src="images/s K Routh.png"><h3>Shri S.K. Rout, IPS (retd)</h3><p>Chairman [cite: 1, 4]</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Salil Chaterjee.jpeg"><h3>Shri Salil Chatterjee</h3><p>Secretary [cite: 1, 5]</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Sanat Gangwal.jpeg"><h3>Shri Sanat Gangwal</h3><p>Treasurer [cite: 1, 6]</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Vikas Choudhary.jpeg"><h3>Shri Vikas Chaudhary</h3><p>Member [cite: 1, 8]</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/R G Dwivedi.jpeg"><h3>Shri R.G. Dwivedi</h3><p>Member [cite: 1, 9]</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Hina.png"><h3>Ms. Hina Rout</h3><p>Member [cite: 1, 10]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/s K Routh.png"><h3>Shri S.K. Rout, IPS (retd)</h3><p>Chairman [cite: 4]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Salil Chaterjee.jpeg"><h3>Shri Salil Chatterjee</h3><p>Secretary [cite: 5]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Sanat Gangwal.jpeg"><h3>Shri Sanat Gangwal</h3><p>Treasurer [cite: 6]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Vikas Choudhary.jpeg"><h3>Shri Vikas Chaudhary</h3><p>Member [cite: 8]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/R G Dwivedi.jpeg"><h3>Shri R.G. Dwivedi</h3><p>Member [cite: 9]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Hina.png"><h3>Ms. Hina Rout</h3><p>Member [cite: 10]</p></div></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -258,13 +259,13 @@
     </section>
 
     <section id="activities">
-        <h2 class="section-title">Bouddhik Samwad [cite: 1, 12]</h2>
+        <h2 class="section-title">Bouddhik Samwad</h2>
         <div class="samwad-grid">
-            <div class="samwad-card"><img src="images/1.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">22-01-2026 [cite: 1, 13]</span><h3>Demography Challenges [cite: 1, 14]</h3><p>Mr. N.K. Tripathi IPS [cite: 1, 15]</p></div></div>
-            <div class="samwad-card"><img src="images/2.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">30-10-2025 [cite: 1, 16]</span><h3>Indo American Relations [cite: 1, 17]</h3><p>Mr. Ajetshatru IAS [cite: 1, 18]</p></div></div>
-            <div class="samwad-card"><img src="images/3.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">29-08-2025 [cite: 1, 22]</span><h3>Bharatiya Gyan Parampara [cite: 1, 23]</h3><p>Dr. Shailendra Shrivastava IPS [cite: 1, 24]</p></div></div>
-            <div class="samwad-card"><img src="images/4.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">18-07-2025 [cite: 1, 25]</span><h3>National Security [cite: 1, 26]</h3><p>Shri S.K. Rout IPS [cite: 1, 27]</p></div></div>
-            <div class="samwad-card"><img src="images/5.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">Activities [cite: 1, 11]</span><h3>Bhopal Kendra Events</h3><p>Cultural Heritage [cite: 1, 11]</p></div></div>
+            <div class="samwad-card"><img src="images/1.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">22-01-2026 [cite: 13]</span><h3>Demography Challenges [cite: 14]</h3><p>Mr. N.K. Tripathi IPS [cite: 15]</p></div></div>
+            <div class="samwad-card"><img src="images/2.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">30-10-2025 [cite: 16]</span><h3>Indo American Relations [cite: 17]</h3><p>Mr. Ajetshatru Shrivastava IAS [cite: 18]</p></div></div>
+            <div class="samwad-card"><img src="images/3.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">29-08-2025 [cite: 22]</span><h3>Bharatiya Gyan Parampara [cite: 23]</h3><p>Dr. Shailendra Shrivastava IPS [cite: 24]</p></div></div>
+            <div class="samwad-card"><img src="images/4.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">18-07-2025 [cite: 25]</span><h3>National Security [cite: 26]</h3><p>Shri S.K. Rout IPS [cite: 27]</p></div></div>
+            <div class="samwad-card"><img src="images/5.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">Activities [cite: 11]</span><h3>Bhopal Kendra Events [cite: 11]</h3><p>Cultural Heritage [cite: 11]</p></div></div>
         </div>
     </section>
 
@@ -272,26 +273,26 @@
         <div class="contact-container">
             <div>
                 <h2 style="color: var(--delft-blue); margin-bottom: 25px;">Contact Details</h2>
-                <p>Address: MP Nagar zone-1, Bhopal - 462023 [cite: 1, 29]</p>
-                <p>Email: bvbbhopal123@gmail.com [cite: 1, 28]</p>
-                <p>Landline: 07554850381 [cite: 1, 29]</p>
-                <div style="margin-top: 30px; border-radius: 20px; overflow: hidden; height: 350px; border: 6px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.21639!2d77.4326!3d23.23240" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p>Address: MP Nagar zone-1, Bhopal [cite: 29]</p>
+                <p>Email: bvbbhopal123@gmail.com [cite: 28]</p>
+                <p>Landline: 07554850381 [cite: 29]</p>
+                <div style="margin-top: 30px; border-radius: 20px; overflow: hidden; height: 350px; border: 6px solid var(--white);">
+                    <iframe src="http://googleusercontent.com/maps.google.com/9" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div>
                 <h3>Enquiry Form</h3>
                 <form action="https://formspree.io/f/mqknpogz" method="POST" style="margin-top: 25px;">
                     <input type="text" name="name" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="Email" required>
                     <select name="course" required>
-                        <option value="">Interested Course</option>
+                        <option value="">Course</option>
                         <option value="HRM">HR Management</option>
                         <option value="Digital Media">Digital Media</option>
                         <option value="Trade">International Trade</option>
                     </select>
-                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="submit-btn">Submit Enquiry</button>
+                    <textarea name="message" rows="6" placeholder="Message"></textarea>
+                    <button type="submit" class="submit-btn">Submit</button>
                 </form>
             </div>
         </div>
@@ -300,8 +301,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Bhopal Kendra [cite: 1, 1]</h4>
-                <p>Institute Of Communication & Management [cite: 1, 1]</p>
+                <h4>Bhopal Kendra</h4>
+                <p>Institute of Communication & Management [cite: 1]</p>
                 <div class="footer-social">
                     <a href="https://facebook.com" class="social-btn"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://youtube.com" class="social-btn"><i class="fab fa-youtube"></i></a>
@@ -309,20 +310,16 @@
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#courses">Courses</a>
-                <a href="#activities">Activities</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">Home</a><a href="#courses">Courses</a><a href="#activities">Activities</a><a href="#contact">Contact</a>
             </div>
             <div class="footer-col">
                 <h4>Reach Us</h4>
-                <p><i class="fas fa-phone"></i> 07554850381 [cite: 1, 29]</p>
-                <p><i class="fas fa-envelope"></i> bvbbhopal123@gmail.com [cite: 1, 28]</p>
-                <p><i class="fas fa-map-marker-alt"></i> MP Nagar Zone-1, Bhopal [cite: 1, 29]</p>
+                <p><i class="fas fa-phone"></i> 07554850381 [cite: 29]</p>
+                <p><i class="fas fa-envelope"></i> bvbbhopal123@gmail.com [cite: 28]</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra. Knowledge is Nectar. [cite: 1, 1, 29]</p>
+            <p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra.</p>
         </div>
     </footer>
 
