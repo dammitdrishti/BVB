@@ -12,13 +12,11 @@
 
     <style>
         :root {
-            /* Palette from Screenshot 2026-01-26 181609.png */
             --space-cadet: #262842;
             --delft-blue: #293961;
             --yinmn-blue: #2C497F;
             --cool-gray: #8897BD;
             --lavender-web: #E3E4FA;
-            
             --orange-primary: #FF6B35; 
             --orange-soft: #FFF9F5;
             --white: #ffffff;
@@ -30,12 +28,7 @@
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
         /* --- NAVIGATION --- */
-        nav { 
-            position: fixed; top: 0; width: 100%; height: 80px; 
-            background: var(--white); display: flex; align-items: center; 
-            justify-content: space-between; padding: 0 5%; z-index: 1000; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
-        }
+        nav { position: fixed; top: 0; width: 100%; height: 80px; background: var(--white); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
         .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--delft-blue); font-weight: 700; font-size: 1.2rem; }
         .nav-brand img { height: 50px; border-radius: 50%; }
         .nav-links { display: flex; gap: 2.5rem; align-items: center; }
@@ -44,15 +37,8 @@
         .nav-cta { background: var(--orange-primary); color: white !important; padding: 10px 24px; border-radius: 6px; }
 
         /* --- HERO --- */
-        .hero { 
-            margin-top: 80px; height: 75vh; 
-            background: linear-gradient(rgba(38, 40, 66, 0.75), rgba(38, 40, 66, 0.75)), url('images/infra 1 (4).jpg');
-            background-size: cover; background-position: center; 
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-            padding: 20px;
-        }
+        .hero { margin-top: 80px; height: 75vh; background: linear-gradient(rgba(38, 40, 66, 0.75), rgba(38, 40, 66, 0.75)), url('images/infra 1 (4).jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px; }
         .hero-content h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 15px; letter-spacing: -1px; }
-        .hero-content p { font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 300; opacity: 0.95; }
 
         /* --- NETWORK STATS --- */
         .network-bar { background: var(--space-cadet); color: white; display: flex; justify-content: space-around; padding: 40px; text-align: center; border-radius: 20px; margin: -60px 10% 0 10%; position: relative; z-index: 10; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
@@ -67,54 +53,49 @@
         .founder-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 8px solid var(--lavender-web); }
         .founder-img img { width: 100%; display: block; }
 
-        /* --- COURSES (UI REPLICATED FROM IMG1) --- */
+        /* --- COURSES --- */
         .course-container { margin-bottom: 60px; border-radius: 4px; overflow: hidden; background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--lavender-web); }
         .course-banner { background: var(--delft-blue); color: white; padding: 20px 40px; font-size: 1.6rem; font-weight: 600; }
         .course-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; padding: 50px 40px; }
-        
         .scope-box { position: relative; padding-left: 25px; margin-bottom: 35px; }
         .scope-box::before { content: ""; position: absolute; left: 0; top: 0; height: 35px; width: 5px; background: var(--orange-primary); }
-        .scope-box h4 { font-size: 1.4rem; margin-bottom: 15px; color: var(--space-cadet); }
-        
         .meta-pill { background: var(--orange-soft); padding: 35px; border-radius: 12px; border: 1px solid #fee0d2; }
-        .meta-pill div { margin: 12px 0; font-weight: 700; color: var(--delft-blue); font-size: 1.1rem; }
-
         .structure-list { list-style: none; }
         .structure-list li { padding: 15px 0; border-bottom: 1px solid var(--lavender-web); display: flex; align-items: center; gap: 12px; font-weight: 500; }
         .structure-list li::before { content: "▶"; color: var(--orange-primary); font-size: 0.7rem; }
 
-        /* --- CAROUSEL FIX --- */
+        /* --- PREMIUM MEMBERS CAROUSEL IMPROVEMENT --- */
         .swiper { width: 100%; padding-bottom: 100px !important; }
         .swiper-button-next, .swiper-button-prev { color: var(--orange-primary) !important; background: white; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); top: 40%; }
         .swiper-pagination { bottom: 20px !important; }
-        .swiper-pagination-bullet-active { background: var(--orange-primary) !important; transform: scale(1.3); }
+        
+        .member-card { background: linear-gradient(145deg, #ffffff, #f1f3ff); padding: 50px 30px; border-radius: 25px; text-align: center; height: 100%; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; overflow: hidden; }
+        .member-card:hover { transform: translateY(-15px); background: var(--space-cadet); color: white; box-shadow: 0 25px 50px rgba(38, 40, 66, 0.3); }
+        .member-card img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--white); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+        .member-card:hover img { border-color: var(--orange-primary); transform: scale(1.05); }
+        .member-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+        .member-card p { font-size: 1rem; color: var(--orange-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .member-card:hover p { color: var(--cool-gray); }
 
-        .member-card { background: var(--lavender-web); padding: 50px 30px; border-radius: 20px; text-align: center; height: 100%; transition: 0.3s; }
-        .member-card img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--white); }
-
-        /* --- BOUDDHIK SAMWAD (ALL 5 EVENTS) --- */
+        /* --- BOUDDHIK SAMWAD --- */
         .samwad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .samwad-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 6px solid var(--orange-primary); transition: 0.3s; }
-        .samwad-card:hover { transform: scale(1.02); }
         .samwad-img { height: 220px; width: 100%; object-fit: cover; }
         .samwad-content { padding: 30px; }
         .samwad-date { color: var(--yinmn-blue); font-weight: 800; font-size: 0.9rem; margin-bottom: 12px; display: block; text-transform: uppercase; }
 
-        /* --- CONTACT & FORM --- */
+        /* --- CONTACT & FOOTER --- */
         .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: var(--white); padding: 60px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.05); }
         input, select, textarea { width: 100%; padding: 18px; border: 2px solid var(--lavender-web); border-radius: 10px; margin-bottom: 25px; outline: none; }
-        .submit-btn { background: var(--orange-primary); color: white; border: none; padding: 22px; width: 100%; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 1.2rem; transition: 0.3s; }
-        .submit-btn:hover { background: var(--space-cadet); transform: translateY(-3px); }
+        .submit-btn { background: var(--orange-primary); color: white; border: none; padding: 22px; width: 100%; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 1.2rem; }
 
-        /* --- FOOTER --- */
         footer { background: var(--space-cadet); color: var(--white); padding: 80px 10% 40px 10%; }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
         .footer-col h4 { color: var(--orange-primary); margin-bottom: 25px; font-size: 1.4rem; }
         .footer-col p, .footer-col a { color: var(--white); opacity: 0.8; text-decoration: none; display: block; margin-bottom: 12px; }
-        .footer-col a:hover { opacity: 1; color: var(--orange-primary); }
-        .footer-social { display: flex; gap: 15px; margin-top: 20px; }
-        .social-btn { width: 45px; height: 45px; border-radius: 50%; background: var(--yinmn-blue); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
-        .social-btn:hover { background: var(--orange-primary); transform: translateY(-3px); }
+        .footer-social { display: flex; gap: 15px; margin-top: 25px; }
+        .social-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--yinmn-blue); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; font-size: 1.4rem; }
+        .social-btn:hover { background: var(--orange-primary); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; opacity: 0.6; font-size: 0.9rem; }
 
         @media (max-width: 1024px) { .footer-grid, .contact-container, .course-body { grid-template-columns: 1fr; } }
@@ -153,8 +134,8 @@
             <div class="founder-img"><img src="images/founder.png" alt="Kulapati K.M. Munshi"></div>
             <div>
                 <h2 style="color: var(--delft-blue); margin-bottom: 25px;">Kulapati Kanhaiyalal Maneklal Munshi</h2>
-                <p>Founded on Monday, November 7, 1938, the Bhavan is an 'Adventure in Faith'—faith in India's Past, Present and Future. Dedicated to the preservation and propagation of Bharatiya Sanskriti.</p>
-                <p style="margin-top: 25px; font-weight: 700; color: var(--orange-primary); font-style: italic; font-size: 1.2rem;">"Let noble thoughts come to us from every side."</p>
+                <p>Founded on Monday, November 7, 1938, the Bhavan is an 'Adventure in Faith'—faith in India's Past, Present and Future. [cite: 1, 3] Dedicated to the preservation and propagation of Bharatiya Sanskriti. [cite: 1, 3]</p>
+                <p style="margin-top: 25px; font-weight: 700; color: var(--orange-primary); font-style: italic; font-size: 1.2rem;">"Let noble thoughts come to us from every side." [cite: 1, 3]</p>
             </div>
         </div>
     </section>
@@ -175,84 +156,84 @@
     </section>
 
     <section id="courses">
-        <h2 class="section-title">Professional Diploma Courses</h2>
+        <h2 class="section-title">Professional Diploma Courses [cite: 1, 29]</h2>
 
         <div class="course-container">
-            <div class="course-banner">Industrial Relations and Personnel Management</div>
+            <div class="course-banner">Industrial Relations and Personnel Management [cite: 1, 30]</div>
             <div class="course-body">
                 <div class="course-left">
                     <div class="scope-box">
-                        <h4>Career Scope</h4>
-                        <p>HR-related jobs in private and government sectors, consulting, entrepreneurship. For graduates wanting skills without MBA costs.</p>
+                        <h4>Career Scope [cite: 1, 32]</h4>
+                        <p>HR roles in private and government sectors, consulting, entrepreneurship. [cite: 1, 33] Ideal for those avoiding expensive MBA courses. [cite: 1, 45]</p>
                     </div>
                     <div class="meta-pill">
-                        <div>Contact Hours: 150 hours</div>
-                        <div>Batch Timings: Evening batches</div>
+                        <div>Contact Hours: 150 hours [cite: 1, 50]</div>
+                        <div>Batch Timings: Evening batches [cite: 1, 51]</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Course Structure</h4>
+                    <h4>Course Structure [cite: 1, 35]</h4>
                     <ul class="structure-list">
-                        <li>Paper 1: Organizational Behaviour</li>
-                        <li>Paper 2: Personnel Management</li>
-                        <li>Paper 3: Human Resources Development</li>
-                        <li>Paper 4: Industrial Relations</li>
-                        <li>Paper 5: Labour Legislation</li>
-                        <li>Paper 6: Cultural Heritage of India</li>
+                        <li>Paper 1: Organizational Behaviour [cite: 1, 36]</li>
+                        <li>Paper 2: Personnel Management [cite: 1, 37]</li>
+                        <li>Paper 3: Human Resources Development [cite: 1, 38]</li>
+                        <li>Paper 4: Industrial Relations [cite: 1, 39]</li>
+                        <li>Paper 5: Labour Legislation [cite: 1, 40]</li>
+                        <li>Paper 6: Cultural Heritage of India [cite: 1, 41]</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="course-container">
-            <div class="course-banner">Post-Graduate Diploma Course in Digital Media</div>
+            <div class="course-banner">PG Diploma in Digital Media [cite: 1, 52]</div>
             <div class="course-body">
                 <div class="course-left">
                     <div class="scope-box">
-                        <h4>Career Scope</h4>
-                        <p>News portals, TV News channel, Newspapers, Content Writing and Marketing for news and non-news sectors.</p>
+                        <h4>Career Scope [cite: 1, 54]</h4>
+                        <p>News portals, TV News channels, Newspapers, Content Writing/Marketing. [cite: 1, 55]</p>
                     </div>
                     <div class="meta-pill">
-                        <div>Contact Hours: 150 hours</div>
-                        <div>Batch Timings: Evening batches</div>
+                        <div>Contact Hours: 150 hours [cite: 1, 50]</div>
+                        <div>Batch Timings: Evening batches [cite: 1, 51]</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Course Structure</h4>
+                    <h4>Course Structure [cite: 1, 57]</h4>
                     <ul class="structure-list">
-                        <li>Paper 1: Understanding Digital Media and laws</li>
-                        <li>Paper 2: Reporting and Content Generation</li>
-                        <li>Paper 3: Advanced Journalistic Writing</li>
-                        <li>Paper 4: Social Media, Content Marketing & Distribution</li>
-                        <li>Paper 5: Multimedia Journalism</li>
-                        <li>Paper 6: Cultural Heritage of India</li>
+                        <li>Paper 1: Understanding Digital Media and laws [cite: 1, 58]</li>
+                        <li>Paper 2: Reporting and Content Generation [cite: 1, 59]</li>
+                        <li>Paper 3: Advanced Journalistic Writing [cite: 1, 60]</li>
+                        <li>Paper 4: Social Media & Marketing [cite: 1, 61]</li>
+                        <li>Paper 5: Multimedia Journalism [cite: 1, 62]</li>
+                        <li>Paper 6: Cultural Heritage of India [cite: 1, 63]</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="course-container">
-            <div class="course-banner">Post-Graduate Diploma Course in International Trade</div>
+            <div class="course-banner">PG Diploma in International Trade [cite: 1, 71]</div>
             <div class="course-body">
                 <div class="course-left">
                     <div class="scope-box">
-                        <h4>Career Scope</h4>
-                        <p>Offices of C&F Agents, CHAs, ICDs, Shipping Lines, ports, airports, foreign exchange documentation.</p>
+                        <h4>Career Scope [cite: 1, 73]</h4>
+                        <p>Shipping Lines, ports, airports, execution of export-import documentation. [cite: 1, 73, 84]</p>
                     </div>
                     <div class="meta-pill">
-                        <div>Contact Hours: 150 hours</div>
-                        <div>Batch Timings: Evening classes</div>
+                        <div>Contact Hours: 150 hours [cite: 1, 89]</div>
+                        <div>Batch Timings: Evening classes [cite: 1, 90]</div>
                     </div>
                 </div>
                 <div>
-                    <h4>Course Structure</h4>
+                    <h4>Course Structure [cite: 1, 75]</h4>
                     <ul class="structure-list">
-                        <li>Paper 1: Port Operations (Maritime)</li>
-                        <li>Paper 2: Supply Chain Management</li>
-                        <li>Paper 3: Financial Management for EXIM</li>
-                        <li>Paper 4: Global Commercial Ecosystem</li>
-                        <li>Paper 5: Export Import Practices & Documentation</li>
-                        <li>Paper 6: Cultural Heritage of India</li>
+                        <li>Paper 1: Port Operations (Maritime) [cite: 1, 76]</li>
+                        <li>Paper 2: Supply Chain Management [cite: 1, 76]</li>
+                        <li>Paper 3: Financial Management for EXIM [cite: 1, 76]</li>
+                        <li>Paper 4: Global Commercial Ecosystem [cite: 1, 76]</li>
+                        <li>Paper 5: Export Import Practices [cite: 1, 76]</li>
+                        <li>Paper 6: Cultural Heritage of India [cite: 1, 76]</li>
                     </ul>
                 </div>
             </div>
@@ -260,15 +241,15 @@
     </section>
 
     <section id="governance" style="background: var(--lavender-web);">
-        <h2 class="section-title">Members on Board</h2>
+        <h2 class="section-title">Members on Board [cite: 1, 3]</h2>
         <div class="swiper memberSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><div class="member-card"><img src="images/s K Routh.png"><h3>Shri S.K. Rout, IPS (retd)</h3><p>Chairman</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Salil Chaterjee.jpeg"><h3>Shri Salil Chatterjee</h3><p>Secretary</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Sanat Gangwal.jpeg"><h3>Shri Sanat Gangwal</h3><p>Treasurer</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Vikas Choudhary.jpeg"><h3>Shri Vikas Chaudhary</h3><p>Member</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/R G Dwivedi.jpeg"><h3>Shri R.G. Dwivedi</h3><p>Member</p></div></div>
-                <div class="swiper-slide"><div class="member-card"><img src="images/Hina.png"><h3>Ms. Hina Rout</h3><p>Member</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/s K Routh.png"><h3>Shri S.K. Rout, IPS (retd)</h3><p>Chairman [cite: 1, 4]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Salil Chaterjee.jpeg"><h3>Shri Salil Chatterjee</h3><p>Secretary [cite: 1, 5]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Sanat Gangwal.jpeg"><h3>Shri Sanat Gangwal</h3><p>Treasurer [cite: 1, 6]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Vikas Choudhary.jpeg"><h3>Shri Vikas Chaudhary</h3><p>Member [cite: 1, 8]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/R G Dwivedi.jpeg"><h3>Shri R.G. Dwivedi</h3><p>Member [cite: 1, 9]</p></div></div>
+                <div class="swiper-slide"><div class="member-card"><img src="images/Hina.png"><h3>Ms. Hina Rout</h3><p>Member [cite: 1, 10]</p></div></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -277,48 +258,13 @@
     </section>
 
     <section id="activities">
-        <h2 class="section-title">Bouddhik Samwad</h2>
+        <h2 class="section-title">Bouddhik Samwad [cite: 1, 12]</h2>
         <div class="samwad-grid">
-            <div class="samwad-card">
-                <img src="images/1.jpeg" class="samwad-img">
-                <div class="samwad-content">
-                    <span class="samwad-date">22-01-2026</span>
-                    <h3>Demography Challenges & Solutions</h3>
-                    <p>Speaker: Mr. N.K. Tripathi IPS (retd)</p>
-                </div>
-            </div>
-            <div class="samwad-card">
-                <img src="images/2.jpeg" class="samwad-img">
-                <div class="samwad-content">
-                    <span class="samwad-date">30-10-2025</span>
-                    <h3>Indo American Relations & Impact</h3>
-                    <p>Speaker: Mr. Ajetshatru Shrivastava IAS(Retd)</p>
-                </div>
-            </div>
-            <div class="samwad-card">
-                <img src="images/3.jpeg" class="samwad-img">
-                <div class="samwad-content">
-                    <span class="samwad-date">29-08-2025</span>
-                    <h3>Bharatiya Gyan Parampara - Jyotish</h3>
-                    <p>Speaker: Dr. Shailendra Shrivastava IPS (retd)</p>
-                </div>
-            </div>
-            <div class="samwad-card">
-                <img src="images/4.jpeg" class="samwad-img">
-                <div class="samwad-content">
-                    <span class="samwad-date">18-07-2025</span>
-                    <h3>National Security</h3>
-                    <p>Speaker: Shri S.K. Rout IPS (retd)</p>
-                </div>
-            </div>
-            <div class="samwad-card">
-                <img src="images/5.jpeg" class="samwad-img">
-                <div class="samwad-content">
-                    <span class="samwad-date">Activities</span>
-                    <h3>Bhopal Kendra Events</h3>
-                    <p>Focus on Cultural Development</p>
-                </div>
-            </div>
+            <div class="samwad-card"><img src="images/1.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">22-01-2026 [cite: 1, 13]</span><h3>Demography Challenges [cite: 1, 14]</h3><p>Mr. N.K. Tripathi IPS [cite: 1, 15]</p></div></div>
+            <div class="samwad-card"><img src="images/2.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">30-10-2025 [cite: 1, 16]</span><h3>Indo American Relations [cite: 1, 17]</h3><p>Mr. Ajetshatru IAS [cite: 1, 18]</p></div></div>
+            <div class="samwad-card"><img src="images/3.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">29-08-2025 [cite: 1, 22]</span><h3>Bharatiya Gyan Parampara [cite: 1, 23]</h3><p>Dr. Shailendra Shrivastava IPS [cite: 1, 24]</p></div></div>
+            <div class="samwad-card"><img src="images/4.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">18-07-2025 [cite: 1, 25]</span><h3>National Security [cite: 1, 26]</h3><p>Shri S.K. Rout IPS [cite: 1, 27]</p></div></div>
+            <div class="samwad-card"><img src="images/5.jpeg" class="samwad-img"><div class="samwad-content"><span class="samwad-date">Activities [cite: 1, 11]</span><h3>Bhopal Kendra Events</h3><p>Cultural Heritage [cite: 1, 11]</p></div></div>
         </div>
     </section>
 
@@ -326,12 +272,11 @@
         <div class="contact-container">
             <div>
                 <h2 style="color: var(--delft-blue); margin-bottom: 25px;">Contact Details</h2>
-                <p><strong>Address:</strong> MP Nagar zone-1, opp. Yes Bank, Bhopal - 462023</p>
-                <p><strong>Email:</strong> bvbbhopal123@gmail.com</p>
-                <p><strong>Landline:</strong> 07554850381</p>
-                
+                <p>Address: MP Nagar zone-1, Bhopal - 462023 [cite: 1, 29]</p>
+                <p>Email: bvbbhopal123@gmail.com [cite: 1, 28]</p>
+                <p>Landline: 07554850381 [cite: 1, 29]</p>
                 <div style="margin-top: 30px; border-radius: 20px; overflow: hidden; height: 350px; border: 6px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3312389647225!2d77.42777611497144!3d23.23094868484837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4273873919b3%3A0xc039641498b9f69b!2sBharatiya%20Vidya%20Bhavan!5e0!3m2!1sen!2sin!4v1611681234567!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.21639!2d77.4326!3d23.23240" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div>
@@ -355,8 +300,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Bhopal Kendra</h4>
-                <p>Bhavan's Institute Of Communication & Management</p>
+                <h4>Bhopal Kendra [cite: 1, 1]</h4>
+                <p>Institute Of Communication & Management [cite: 1, 1]</p>
                 <div class="footer-social">
                     <a href="https://facebook.com" class="social-btn"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://youtube.com" class="social-btn"><i class="fab fa-youtube"></i></a>
@@ -371,31 +316,20 @@
             </div>
             <div class="footer-col">
                 <h4>Reach Us</h4>
-                <p><i class="fas fa-phone"></i> 07554850381</p>
-                <p><i class="fas fa-envelope"></i> bvbbhopal123@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> MP Nagar Zone-1, Bhopal</p>
+                <p><i class="fas fa-phone"></i> 07554850381 [cite: 1, 29]</p>
+                <p><i class="fas fa-envelope"></i> bvbbhopal123@gmail.com [cite: 1, 28]</p>
+                <p><i class="fas fa-map-marker-alt"></i> MP Nagar Zone-1, Bhopal [cite: 1, 29]</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra. All rights reserved.</p>
+            <p>© 2026 Bharatiya Vidya Bhavan, Bhopal Kendra. Knowledge is Nectar. [cite: 1, 1, 29]</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        new Swiper(".infraSwiper", {
-            slidesPerView: 1, spaceBetween: 30, loop: true,
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-            pagination: { el: ".swiper-pagination", clickable: true },
-            breakpoints: { 768: { slidesPerView: 2 } }
-        });
-        
-        new Swiper(".memberSwiper", {
-            slidesPerView: 1, spaceBetween: 30, loop: true,
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-            pagination: { el: ".swiper-pagination", clickable: true },
-            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
-        });
+        new Swiper(".infraSwiper", { slidesPerView: 1, spaceBetween: 30, loop: true, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 768: { slidesPerView: 2 } } });
+        new Swiper(".memberSwiper", { slidesPerView: 1, spaceBetween: 30, loop: true, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
     </script>
 </body>
 </html>
